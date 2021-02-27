@@ -1,0 +1,138 @@
+Cabal-version:  2.2
+
+name:           blockfrost
+version:        0.1.0.0
+build-type:     Simple
+
+library
+  exposed-modules:
+      BlockfrostAPI
+      BlockfrostAPI.Operations.Get_
+      BlockfrostAPI.Operations.GetAccountsStakeAddress_
+      BlockfrostAPI.Operations.GetAccountsStakeAddressAddresses
+      BlockfrostAPI.Operations.GetAccountsStakeAddressDelegations
+      BlockfrostAPI.Operations.GetAccountsStakeAddressHistory
+      BlockfrostAPI.Operations.GetAccountsStakeAddressRegistrations
+      BlockfrostAPI.Operations.GetAccountsStakeAddressRewards
+      BlockfrostAPI.Operations.GetAddressesAddress_
+      BlockfrostAPI.Operations.GetAddressesAddressTotal
+      BlockfrostAPI.Operations.GetAddressesAddressTxs
+      BlockfrostAPI.Operations.GetAddressesAddressUtxos
+      BlockfrostAPI.Operations.GetAssets
+      BlockfrostAPI.Operations.GetAssetsPolicyPolicyId_
+      BlockfrostAPI.Operations.GetAssetsAsset_
+      BlockfrostAPI.Operations.GetAssetsAssetAddresses
+      BlockfrostAPI.Operations.GetAssetsAssetHistory
+      BlockfrostAPI.Operations.GetAssetsAssetTxs
+      BlockfrostAPI.Operations.GetBlocksLatest
+      BlockfrostAPI.Operations.GetBlocksHashOrNumber_
+      BlockfrostAPI.Operations.GetBlocksHashOrNumberNext
+      BlockfrostAPI.Operations.GetBlocksHashOrNumberPrevious
+      BlockfrostAPI.Operations.GetBlocksHashOrNumberTxs
+      BlockfrostAPI.Operations.GetEpochsLatest
+      BlockfrostAPI.Operations.GetEpochsNumber_
+      BlockfrostAPI.Operations.GetEpochsNumberBlocks
+      BlockfrostAPI.Operations.GetEpochsNumberBlocksPoolId_
+      BlockfrostAPI.Operations.GetEpochsNumberNext
+      BlockfrostAPI.Operations.GetEpochsNumberParameters
+      BlockfrostAPI.Operations.GetEpochsNumberPrevious
+      BlockfrostAPI.Operations.GetEpochsNumberStakes
+      BlockfrostAPI.Operations.GetEpochsNumberStakesPoolId_
+      BlockfrostAPI.Operations.GetGenesis
+      BlockfrostAPI.Operations.GetHealth
+      BlockfrostAPI.Operations.GetHealthClock
+      BlockfrostAPI.Operations.PostIpfsAdd
+      BlockfrostAPI.Operations.GetIpfsGatewayIPFSPath_
+      BlockfrostAPI.Operations.PostIpfsPinAddIPFSPath_
+      BlockfrostAPI.Operations.GetIpfsPinList_
+      BlockfrostAPI.Operations.GetIpfsPinListIPFSPath_
+      BlockfrostAPI.Operations.PostIpfsPinRemoveIPFSPath_
+      BlockfrostAPI.Operations.GetMetadataTxsLabels
+      BlockfrostAPI.Operations.GetMetadataTxsLabelsLabel_
+      BlockfrostAPI.Operations.GetMetadataTxsLabelsLabelCbor
+      BlockfrostAPI.Operations.GetMetrics_
+      BlockfrostAPI.Operations.GetMetricsEndpoints
+      BlockfrostAPI.Operations.GetPools
+      BlockfrostAPI.Operations.GetPoolsRetired
+      BlockfrostAPI.Operations.GetPoolsRetiring
+      BlockfrostAPI.Operations.GetPoolsPoolId_
+      BlockfrostAPI.Operations.GetPoolsPoolIdBlocks
+      BlockfrostAPI.Operations.GetPoolsPoolIdDelegators
+      BlockfrostAPI.Operations.GetPoolsPoolIdHistory
+      BlockfrostAPI.Operations.GetPoolsPoolIdMetadata
+      BlockfrostAPI.Operations.GetPoolsPoolIdRelays
+      BlockfrostAPI.Operations.GetPoolsPoolIdUpdates
+      BlockfrostAPI.Operations.PostTxSubmit
+      BlockfrostAPI.Operations.GetTxsHash_
+      BlockfrostAPI.Operations.GetTxsHashDelegations
+      BlockfrostAPI.Operations.GetTxsHashMetadata
+      BlockfrostAPI.Operations.GetTxsHashMetadataCbor
+      BlockfrostAPI.Operations.GetTxsHashPoolRetires
+      BlockfrostAPI.Operations.GetTxsHashPoolUpdates
+      BlockfrostAPI.Operations.GetTxsHashStakes
+      BlockfrostAPI.Operations.GetTxsHashUtxos
+      BlockfrostAPI.Operations.GetTxsHashWithdrawals
+      BlockfrostAPI.Types
+      BlockfrostAPI.TypeAlias
+      BlockfrostAPI.Types.AccountAddressesContent
+      BlockfrostAPI.Types.AccountContent
+      BlockfrostAPI.Types.AccountDelegationContent
+      BlockfrostAPI.Types.AccountHistoryContent
+      BlockfrostAPI.Types.AccountRegistrationContent
+      BlockfrostAPI.Types.AccountRewardContent
+      BlockfrostAPI.Types.AddressContent
+      BlockfrostAPI.Types.AddressContentTotal
+      BlockfrostAPI.Types.AddressUtxoContent
+      BlockfrostAPI.Types.Asset
+      BlockfrostAPI.Types.AssetAddresses
+      BlockfrostAPI.Types.AssetHistory
+      BlockfrostAPI.Types.AssetPolicy
+      BlockfrostAPI.Types.Assets
+      BlockfrostAPI.Types.BlockContent
+      BlockfrostAPI.Types.EpochContent
+      BlockfrostAPI.Types.EpochParamContent
+      BlockfrostAPI.Types.EpochStakeContent
+      BlockfrostAPI.Types.EpochStakePoolContent
+      BlockfrostAPI.Types.GenesisContent
+      BlockfrostAPI.Types.Metrics
+      BlockfrostAPI.Types.MetricsEndpoints
+      BlockfrostAPI.Types.Pool
+      BlockfrostAPI.Types.PoolDelegators
+      BlockfrostAPI.Types.PoolHistory
+      BlockfrostAPI.Types.PoolListRetire
+      BlockfrostAPI.Types.PoolMetadata
+      BlockfrostAPI.Types.PoolRelays
+      BlockfrostAPI.Types.PoolUpdates
+      BlockfrostAPI.Types.TxContent
+      BlockfrostAPI.Types.TxContentDelegations
+      BlockfrostAPI.Types.TxContentMetadata
+      BlockfrostAPI.Types.TxContentMetadataCbor
+      BlockfrostAPI.Types.TxContentPoolCerts
+      BlockfrostAPI.Types.TxContentPoolRetires
+      BlockfrostAPI.Types.TxContentStakeAddr
+      BlockfrostAPI.Types.TxContentUtxo
+      BlockfrostAPI.Types.TxContentWithdrawals
+      BlockfrostAPI.Types.TxMetadataLabelCbor
+      BlockfrostAPI.Types.TxMetadataLabelJson
+      BlockfrostAPI.Types.TxMetadataLabels
+      BlockfrostAPI.Configuration
+      BlockfrostAPI.SecuritySchemes
+      BlockfrostAPI.Common
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+    , text
+    , ghc-prim
+    , http-conduit
+    , http-client
+    , http-types
+    , bytestring
+    , aeson
+    , unordered-containers
+    , vector
+    , scientific
+    , time
+    , mtl
+    , transformers
+  default-language: Haskell2010
