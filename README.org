@@ -1,0 +1,34 @@
+* Haskell Blockfrost API client
+
+[[https://blockfrost.io][Blockfrost.io]] API client library generated using [[https://github.com/Haskell-OpenAPI-Code-Generator/Haskell-OpenAPI-Client-Code-Generator/][Haskell-OpenAPI-Client-Code-Generator]]
+
+** Usage
+
+Sample program utilizing Blockfrost testnet:
+
+#+begin_src haskell :tangle examples/Ping.hs
+{-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE ScopedTypeVariables #-}
+module Main where
+
+-- blockfrost-api
+import BlockfrostAPI
+-- http-conduit
+import Network.HTTP.Simple (Response)
+
+import qualified Data.Text
+import qualified Data.Text.IO
+import qualified System.Environment
+
+main :: IO ()
+main = do
+  tokPath <- System.Environment.getEnv "BLOCKFROST_TESTNET_TOKEN_PATH"
+  tok <- Data.Text.strip <$> Data.Text.IO.readFile tokPath
+  let cfg = BlockfrostAPI.defaultConfiguration
+              { configBaseURL = "https://cardano-testnet.blockfrost.io/api/v0/"
+              , configSecurityScheme = apiKeyInHeaderAuthenticationSecurityScheme tok
+              }
+
+  (r :: Response GetHealthResponse) <- BlockfrostAPI.runWithConfiguration cfg getHealth
+  print r
+#+end_src
