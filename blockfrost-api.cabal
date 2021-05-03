@@ -1,6 +1,6 @@
 Cabal-version:  2.2
 
-name:           blockfrost
+name:           blockfrost-api
 version:        0.1.0.0
 build-type:     Simple
 
