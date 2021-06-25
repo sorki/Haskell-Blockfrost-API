@@ -6,3 +6,6 @@ instance Show TxContentDelegations
 instance Eq TxContentDelegations
 instance FromJSON TxContentDelegations
 instance ToJSON TxContentDelegations
+-- XXX: collision
+-- type TxContentDelegations = [TxContentDelegations]
+type TxContentDelegations' = [TxContentDelegations]

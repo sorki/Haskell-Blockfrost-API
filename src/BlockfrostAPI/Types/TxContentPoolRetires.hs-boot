@@ -6,3 +6,6 @@ instance Show TxContentPoolRetires
 instance Eq TxContentPoolRetires
 instance FromJSON TxContentPoolRetires
 instance ToJSON TxContentPoolRetires
+-- XXX: collision
+-- type TxContentPoolRetires = [TxContentPoolRetires]
+type TxContentPoolRetires' = [TxContentPoolRetires]

@@ -6,3 +6,6 @@ instance Show TxContentWithdrawals
 instance Eq TxContentWithdrawals
 instance FromJSON TxContentWithdrawals
 instance ToJSON TxContentWithdrawals
+-- XXX: collision
+-- type TxContentWithdrawals = [TxContentWithdrawals]
+type TxContentWithdrawals' = [TxContentWithdrawals]

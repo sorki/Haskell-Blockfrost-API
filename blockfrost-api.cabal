@@ -10,12 +10,16 @@ library
       BlockfrostAPI.Operations.Get_
       BlockfrostAPI.Operations.GetAccountsStakeAddress_
       BlockfrostAPI.Operations.GetAccountsStakeAddressAddresses
+      BlockfrostAPI.Operations.GetAccountsStakeAddressAddressesAssets
       BlockfrostAPI.Operations.GetAccountsStakeAddressDelegations
       BlockfrostAPI.Operations.GetAccountsStakeAddressHistory
+      BlockfrostAPI.Operations.GetAccountsStakeAddressMirs
       BlockfrostAPI.Operations.GetAccountsStakeAddressRegistrations
       BlockfrostAPI.Operations.GetAccountsStakeAddressRewards
+      BlockfrostAPI.Operations.GetAccountsStakeAddressWithdrawals
       BlockfrostAPI.Operations.GetAddressesAddress_
       BlockfrostAPI.Operations.GetAddressesAddressTotal
+      BlockfrostAPI.Operations.GetAddressesAddressTransactions
       BlockfrostAPI.Operations.GetAddressesAddressTxs
       BlockfrostAPI.Operations.GetAddressesAddressUtxos
       BlockfrostAPI.Operations.GetAssets
@@ -23,13 +27,18 @@ library
       BlockfrostAPI.Operations.GetAssetsAsset_
       BlockfrostAPI.Operations.GetAssetsAssetAddresses
       BlockfrostAPI.Operations.GetAssetsAssetHistory
+      BlockfrostAPI.Operations.GetAssetsAssetTransactions
       BlockfrostAPI.Operations.GetAssetsAssetTxs
+      BlockfrostAPI.Operations.GetBlocksEpochEpochNumberSlotSlotNumber_
       BlockfrostAPI.Operations.GetBlocksLatest
+      BlockfrostAPI.Operations.GetBlocksLatestTxs
+      BlockfrostAPI.Operations.GetBlocksSlotSlotNumber_
       BlockfrostAPI.Operations.GetBlocksHashOrNumber_
       BlockfrostAPI.Operations.GetBlocksHashOrNumberNext
       BlockfrostAPI.Operations.GetBlocksHashOrNumberPrevious
       BlockfrostAPI.Operations.GetBlocksHashOrNumberTxs
       BlockfrostAPI.Operations.GetEpochsLatest
+      BlockfrostAPI.Operations.GetEpochsLatestParameters
       BlockfrostAPI.Operations.GetEpochsNumber_
       BlockfrostAPI.Operations.GetEpochsNumberBlocks
       BlockfrostAPI.Operations.GetEpochsNumberBlocksPoolId_
@@ -52,6 +61,10 @@ library
       BlockfrostAPI.Operations.GetMetadataTxsLabelsLabelCbor
       BlockfrostAPI.Operations.GetMetrics_
       BlockfrostAPI.Operations.GetMetricsEndpoints
+      BlockfrostAPI.Operations.GetNutlinkTickersTicker_
+      BlockfrostAPI.Operations.GetNutlinkAddress_
+      BlockfrostAPI.Operations.GetNutlinkAddressTickers
+      BlockfrostAPI.Operations.GetNutlinkAddressTickersTicker_
       BlockfrostAPI.Operations.GetPools
       BlockfrostAPI.Operations.GetPoolsRetired
       BlockfrostAPI.Operations.GetPoolsRetiring
@@ -67,6 +80,7 @@ library
       BlockfrostAPI.Operations.GetTxsHashDelegations
       BlockfrostAPI.Operations.GetTxsHashMetadata
       BlockfrostAPI.Operations.GetTxsHashMetadataCbor
+      BlockfrostAPI.Operations.GetTxsHashMirs
       BlockfrostAPI.Operations.GetTxsHashPoolRetires
       BlockfrostAPI.Operations.GetTxsHashPoolUpdates
       BlockfrostAPI.Operations.GetTxsHashStakes
@@ -74,19 +88,24 @@ library
       BlockfrostAPI.Operations.GetTxsHashWithdrawals
       BlockfrostAPI.Types
       BlockfrostAPI.TypeAlias
+      BlockfrostAPI.Types.AccountAddressesAssets
       BlockfrostAPI.Types.AccountAddressesContent
       BlockfrostAPI.Types.AccountContent
       BlockfrostAPI.Types.AccountDelegationContent
       BlockfrostAPI.Types.AccountHistoryContent
+      BlockfrostAPI.Types.AccountMirContent
       BlockfrostAPI.Types.AccountRegistrationContent
       BlockfrostAPI.Types.AccountRewardContent
+      BlockfrostAPI.Types.AccountWithdrawalContent
       BlockfrostAPI.Types.AddressContent
       BlockfrostAPI.Types.AddressContentTotal
+      BlockfrostAPI.Types.AddressTransactionsContent
       BlockfrostAPI.Types.AddressUtxoContent
       BlockfrostAPI.Types.Asset
       BlockfrostAPI.Types.AssetAddresses
       BlockfrostAPI.Types.AssetHistory
       BlockfrostAPI.Types.AssetPolicy
+      BlockfrostAPI.Types.AssetTransactions
       BlockfrostAPI.Types.Assets
       BlockfrostAPI.Types.BlockContent
       BlockfrostAPI.Types.EpochContent
@@ -96,6 +115,10 @@ library
       BlockfrostAPI.Types.GenesisContent
       BlockfrostAPI.Types.Metrics
       BlockfrostAPI.Types.MetricsEndpoints
+      BlockfrostAPI.Types.NutlinkAddress
+      BlockfrostAPI.Types.NutlinkAddressTicker
+      BlockfrostAPI.Types.NutlinkAddressTickers
+      BlockfrostAPI.Types.NutlinkTickersTicker
       BlockfrostAPI.Types.Pool
       BlockfrostAPI.Types.PoolDelegators
       BlockfrostAPI.Types.PoolHistory
@@ -107,6 +130,7 @@ library
       BlockfrostAPI.Types.TxContentDelegations
       BlockfrostAPI.Types.TxContentMetadata
       BlockfrostAPI.Types.TxContentMetadataCbor
+      BlockfrostAPI.Types.TxContentMirs
       BlockfrostAPI.Types.TxContentPoolCerts
       BlockfrostAPI.Types.TxContentPoolRetires
       BlockfrostAPI.Types.TxContentStakeAddr

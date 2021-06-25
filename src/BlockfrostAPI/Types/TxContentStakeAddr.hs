@@ -31,7 +31,7 @@ import qualified GHC.Types
 import qualified BlockfrostAPI.Common
 import BlockfrostAPI.TypeAlias
 
--- | Defines the object schema located at @components.schemas.tx_content_stake_addr@ in the specification.
+-- | Defines the object schema located at @components.schemas.tx_content_stake_addr.items@ in the specification.
 -- 
 -- 
 data TxContentStakeAddr = TxContentStakeAddr {
@@ -56,3 +56,9 @@ mkTxContentStakeAddr :: Data.Text.Internal.Text -- ^ 'txContentStakeAddrAddress'
 mkTxContentStakeAddr txContentStakeAddrAddress txContentStakeAddrCertIndex txContentStakeAddrRegistration = TxContentStakeAddr{txContentStakeAddrAddress = txContentStakeAddrAddress,
                                                                                                                                txContentStakeAddrCertIndex = txContentStakeAddrCertIndex,
                                                                                                                                txContentStakeAddrRegistration = txContentStakeAddrRegistration}
+-- | Defines an alias for the schema located at @components.schemas.tx_content_stake_addr@ in the specification.
+-- 
+-- 
+-- XXX: collision
+-- type TxContentStakeAddr = [TxContentStakeAddr]
+type TxContentStakeAddr' = [TxContentStakeAddr]

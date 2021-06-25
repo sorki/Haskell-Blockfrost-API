@@ -3,19 +3,24 @@
 -- | Rexports all type modules (used in the operation modules).
 module BlockfrostAPI.Types (
   module BlockfrostAPI.TypeAlias,
+  module BlockfrostAPI.Types.AccountAddressesAssets,
   module BlockfrostAPI.Types.AccountAddressesContent,
   module BlockfrostAPI.Types.AccountContent,
   module BlockfrostAPI.Types.AccountDelegationContent,
   module BlockfrostAPI.Types.AccountHistoryContent,
+  module BlockfrostAPI.Types.AccountMirContent,
   module BlockfrostAPI.Types.AccountRegistrationContent,
   module BlockfrostAPI.Types.AccountRewardContent,
+  module BlockfrostAPI.Types.AccountWithdrawalContent,
   module BlockfrostAPI.Types.AddressContent,
   module BlockfrostAPI.Types.AddressContentTotal,
+  module BlockfrostAPI.Types.AddressTransactionsContent,
   module BlockfrostAPI.Types.AddressUtxoContent,
   module BlockfrostAPI.Types.Asset,
   module BlockfrostAPI.Types.AssetAddresses,
   module BlockfrostAPI.Types.AssetHistory,
   module BlockfrostAPI.Types.AssetPolicy,
+  module BlockfrostAPI.Types.AssetTransactions,
   module BlockfrostAPI.Types.Assets,
   module BlockfrostAPI.Types.BlockContent,
   module BlockfrostAPI.Types.EpochContent,
@@ -25,6 +30,10 @@ module BlockfrostAPI.Types (
   module BlockfrostAPI.Types.GenesisContent,
   module BlockfrostAPI.Types.Metrics,
   module BlockfrostAPI.Types.MetricsEndpoints,
+  module BlockfrostAPI.Types.NutlinkAddress,
+  module BlockfrostAPI.Types.NutlinkAddressTicker,
+  module BlockfrostAPI.Types.NutlinkAddressTickers,
+  module BlockfrostAPI.Types.NutlinkTickersTicker,
   module BlockfrostAPI.Types.Pool,
   module BlockfrostAPI.Types.PoolDelegators,
   module BlockfrostAPI.Types.PoolHistory,
@@ -36,6 +45,7 @@ module BlockfrostAPI.Types (
   module BlockfrostAPI.Types.TxContentDelegations,
   module BlockfrostAPI.Types.TxContentMetadata,
   module BlockfrostAPI.Types.TxContentMetadataCbor,
+  module BlockfrostAPI.Types.TxContentMirs,
   module BlockfrostAPI.Types.TxContentPoolCerts,
   module BlockfrostAPI.Types.TxContentPoolRetires,
   module BlockfrostAPI.Types.TxContentStakeAddr,
@@ -47,19 +57,24 @@ module BlockfrostAPI.Types (
   ) where
 
 import BlockfrostAPI.TypeAlias
+import BlockfrostAPI.Types.AccountAddressesAssets
 import BlockfrostAPI.Types.AccountAddressesContent
 import BlockfrostAPI.Types.AccountContent
 import BlockfrostAPI.Types.AccountDelegationContent
 import BlockfrostAPI.Types.AccountHistoryContent
+import BlockfrostAPI.Types.AccountMirContent
 import BlockfrostAPI.Types.AccountRegistrationContent
 import BlockfrostAPI.Types.AccountRewardContent
+import BlockfrostAPI.Types.AccountWithdrawalContent
 import BlockfrostAPI.Types.AddressContent
 import BlockfrostAPI.Types.AddressContentTotal
+import BlockfrostAPI.Types.AddressTransactionsContent
 import BlockfrostAPI.Types.AddressUtxoContent
 import BlockfrostAPI.Types.Asset
 import BlockfrostAPI.Types.AssetAddresses
 import BlockfrostAPI.Types.AssetHistory
 import BlockfrostAPI.Types.AssetPolicy
+import BlockfrostAPI.Types.AssetTransactions
 import BlockfrostAPI.Types.Assets
 import BlockfrostAPI.Types.BlockContent
 import BlockfrostAPI.Types.EpochContent
@@ -69,6 +84,10 @@ import BlockfrostAPI.Types.EpochStakePoolContent
 import BlockfrostAPI.Types.GenesisContent
 import BlockfrostAPI.Types.Metrics
 import BlockfrostAPI.Types.MetricsEndpoints
+import BlockfrostAPI.Types.NutlinkAddress
+import BlockfrostAPI.Types.NutlinkAddressTicker
+import BlockfrostAPI.Types.NutlinkAddressTickers
+import BlockfrostAPI.Types.NutlinkTickersTicker
 import BlockfrostAPI.Types.Pool
 import BlockfrostAPI.Types.PoolDelegators
 import BlockfrostAPI.Types.PoolHistory
@@ -80,6 +99,7 @@ import BlockfrostAPI.Types.TxContent
 import BlockfrostAPI.Types.TxContentDelegations
 import BlockfrostAPI.Types.TxContentMetadata
 import BlockfrostAPI.Types.TxContentMetadataCbor
+import BlockfrostAPI.Types.TxContentMirs
 import BlockfrostAPI.Types.TxContentPoolCerts
 import BlockfrostAPI.Types.TxContentPoolRetires
 import BlockfrostAPI.Types.TxContentStakeAddr

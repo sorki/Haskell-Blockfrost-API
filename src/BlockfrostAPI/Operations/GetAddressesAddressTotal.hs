@@ -67,7 +67,7 @@ getAddresses_Address_Total address = GHC.Base.fmap (\response_0 -> GHC.Base.fmap
 -- The response constructor is chosen by the status code of the response. If no case matches (no specific case for the response code, no range case, no default case), 'GetAddressesAddressTotalResponseError' is used.
 data GetAddressesAddressTotalResponse =
    GetAddressesAddressTotalResponseError GHC.Base.String -- ^ Means either no matching case available or a parse error
-  | GetAddressesAddressTotalResponse200 AddressContentTotal -- ^ Return the address\' details.
+  | GetAddressesAddressTotalResponse200 AddressContentTotal -- ^ Return the Address details.
   | GetAddressesAddressTotalResponse400 GetAddressesAddressTotalResponseBody400 -- ^ Bad request
   | GetAddressesAddressTotalResponse403 GetAddressesAddressTotalResponseBody403 -- ^ Authentication secret is missing or invalid
   | GetAddressesAddressTotalResponse404 GetAddressesAddressTotalResponseBody404 -- ^ Component not found

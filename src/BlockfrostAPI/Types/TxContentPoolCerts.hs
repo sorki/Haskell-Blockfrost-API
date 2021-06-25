@@ -31,7 +31,7 @@ import qualified GHC.Types
 import qualified BlockfrostAPI.Common
 import BlockfrostAPI.TypeAlias
 
--- | Defines the object schema located at @components.schemas.tx_content_pool_certs@ in the specification.
+-- | Defines the object schema located at @components.schemas.tx_content_pool_certs.items@ in the specification.
 -- 
 -- 
 data TxContentPoolCerts = TxContentPoolCerts {
@@ -88,7 +88,7 @@ mkTxContentPoolCerts txContentPoolCertsActiveEpoch txContentPoolCertsCertIndex t
                                                                                                                                                                                                                                                                                                                                                      txContentPoolCertsRelays = txContentPoolCertsRelays,
                                                                                                                                                                                                                                                                                                                                                      txContentPoolCertsRewardAccount = txContentPoolCertsRewardAccount,
                                                                                                                                                                                                                                                                                                                                                      txContentPoolCertsVrfKey = txContentPoolCertsVrfKey}
--- | Defines the object schema located at @components.schemas.tx_content_pool_certs.properties.metadata@ in the specification.
+-- | Defines the object schema located at @components.schemas.tx_content_pool_certs.items.properties.metadata@ in the specification.
 -- 
 -- 
 data TxContentPoolCertsMetadata' = TxContentPoolCertsMetadata' {
@@ -125,7 +125,7 @@ mkTxContentPoolCertsMetadata' txContentPoolCertsMetadata'Description txContentPo
                                                                                                                                                                                                                                                                         txContentPoolCertsMetadata'Name = txContentPoolCertsMetadata'Name,
                                                                                                                                                                                                                                                                         txContentPoolCertsMetadata'Ticker = txContentPoolCertsMetadata'Ticker,
                                                                                                                                                                                                                                                                         txContentPoolCertsMetadata'Url = txContentPoolCertsMetadata'Url}
--- | Defines the object schema located at @components.schemas.tx_content_pool_certs.properties.relays.items@ in the specification.
+-- | Defines the object schema located at @components.schemas.tx_content_pool_certs.items.properties.relays.items@ in the specification.
 -- 
 -- 
 data TxContentPoolCertsRelays' = TxContentPoolCertsRelays' {
@@ -158,3 +158,9 @@ mkTxContentPoolCertsRelays' txContentPoolCertsRelays'Dns txContentPoolCertsRelay
                                                                                                                                                                                                                txContentPoolCertsRelays'Ipv4 = txContentPoolCertsRelays'Ipv4,
                                                                                                                                                                                                                txContentPoolCertsRelays'Ipv6 = txContentPoolCertsRelays'Ipv6,
                                                                                                                                                                                                                txContentPoolCertsRelays'Port = txContentPoolCertsRelays'Port}
+-- | Defines an alias for the schema located at @components.schemas.tx_content_pool_certs@ in the specification.
+-- 
+-- 
+-- XXX: collision
+-- type TxContentPoolCerts = [TxContentPoolCerts]
+type TxContentPoolCerts' = [TxContentPoolCerts]

@@ -15,7 +15,9 @@ import qualified BlockfrostAPI.Common
 
 -- | Use this security scheme to use token in HTTP header for authentication. Should be used in a 'BlockfrostAPI.Common.Configuration'.
 -- 
--- 
+-- There are multiple token types available based on network you choose
+-- when creating a Blockfrost a project, for a list of token types
+-- see [Available networks](\#section\/Available-networks)
 -- 
 -- @
 -- 'BlockfrostAPI.Configuration.defaultConfiguration'

@@ -31,7 +31,7 @@ import qualified GHC.Types
 import qualified BlockfrostAPI.Common
 import BlockfrostAPI.TypeAlias
 
--- | Defines the object schema located at @components.schemas.tx_content_pool_retires@ in the specification.
+-- | Defines the object schema located at @components.schemas.tx_content_pool_retires.items@ in the specification.
 -- 
 -- 
 data TxContentPoolRetires = TxContentPoolRetires {
@@ -56,3 +56,9 @@ mkTxContentPoolRetires :: GHC.Integer.Type.Integer -- ^ 'txContentPoolRetiresCer
 mkTxContentPoolRetires txContentPoolRetiresCertIndex txContentPoolRetiresPoolId txContentPoolRetiresRetiringEpoch = TxContentPoolRetires{txContentPoolRetiresCertIndex = txContentPoolRetiresCertIndex,
                                                                                                                                          txContentPoolRetiresPoolId = txContentPoolRetiresPoolId,
                                                                                                                                          txContentPoolRetiresRetiringEpoch = txContentPoolRetiresRetiringEpoch}
+-- | Defines an alias for the schema located at @components.schemas.tx_content_pool_retires@ in the specification.
+-- 
+-- 
+-- XXX: collision
+-- type TxContentPoolRetires = [TxContentPoolRetires]
+type TxContentPoolRetires' = [TxContentPoolRetires]

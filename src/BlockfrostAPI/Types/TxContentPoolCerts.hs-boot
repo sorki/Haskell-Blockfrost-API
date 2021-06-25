@@ -16,3 +16,6 @@ instance Show TxContentPoolCertsRelays'
 instance Eq TxContentPoolCertsRelays'
 instance FromJSON TxContentPoolCertsRelays'
 instance ToJSON TxContentPoolCertsRelays'
+-- XXX: collision
+-- type TxContentPoolCerts = [TxContentPoolCerts]
+type TxContentPoolCerts' = [TxContentPoolCerts]

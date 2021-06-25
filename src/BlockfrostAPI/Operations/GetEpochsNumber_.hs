@@ -45,7 +45,7 @@ import BlockfrostAPI.Types
 -- | > GET /epochs/{number}
 -- 
 -- Return the content of the requested epoch.
-getEpochs_Number_ :: forall m . BlockfrostAPI.Common.MonadHTTP m => Data.Text.Internal.Text -- ^ number: Number of the epoch
+getEpochs_Number_ :: forall m . BlockfrostAPI.Common.MonadHTTP m => GHC.Integer.Type.Integer -- ^ number: Number of the epoch
   -> BlockfrostAPI.Common.StripeT m (Network.HTTP.Client.Types.Response GetEpochsNumberResponse) -- ^ Monadic computation which returns the result of the operation
 getEpochs_Number_ number = GHC.Base.fmap (\response_0 -> GHC.Base.fmap (Data.Either.either GetEpochsNumberResponseError GHC.Base.id GHC.Base.. (\response body -> if | (\status_1 -> Network.HTTP.Types.Status.statusCode status_1 GHC.Classes.== 200) (Network.HTTP.Client.Types.responseStatus response) -> GetEpochsNumberResponse200 Data.Functor.<$> (Data.Aeson.eitherDecodeStrict body :: Data.Either.Either GHC.Base.String
                                                                                                                                                                                                                                                                                                                                                                                                                     EpochContent)
@@ -229,7 +229,7 @@ mkGetEpochsNumberResponseBody500 getEpochsNumberResponseBody500Error getEpochsNu
 -- 
 -- The same as 'getEpochs_Number_' but accepts an explicit configuration.
 getEpochs_Number_WithConfiguration :: forall m . BlockfrostAPI.Common.MonadHTTP m => BlockfrostAPI.Common.Configuration -- ^ The configuration to use in the request
-  -> Data.Text.Internal.Text -- ^ number: Number of the epoch
+  -> GHC.Integer.Type.Integer -- ^ number: Number of the epoch
   -> m (Network.HTTP.Client.Types.Response GetEpochsNumberResponse) -- ^ Monadic computation which returns the result of the operation
 getEpochs_Number_WithConfiguration config
                                    number = GHC.Base.fmap (\response_8 -> GHC.Base.fmap (Data.Either.either GetEpochsNumberResponseError GHC.Base.id GHC.Base.. (\response body -> if | (\status_9 -> Network.HTTP.Types.Status.statusCode status_9 GHC.Classes.== 200) (Network.HTTP.Client.Types.responseStatus response) -> GetEpochsNumberResponse200 Data.Functor.<$> (Data.Aeson.eitherDecodeStrict body :: Data.Either.Either GHC.Base.String
@@ -250,14 +250,14 @@ getEpochs_Number_WithConfiguration config
 -- | > GET /epochs/{number}
 -- 
 -- The same as 'getEpochs_Number_' but returns the raw 'Data.ByteString.Char8.ByteString'.
-getEpochs_Number_Raw :: forall m . BlockfrostAPI.Common.MonadHTTP m => Data.Text.Internal.Text -- ^ number: Number of the epoch
+getEpochs_Number_Raw :: forall m . BlockfrostAPI.Common.MonadHTTP m => GHC.Integer.Type.Integer -- ^ number: Number of the epoch
   -> BlockfrostAPI.Common.StripeT m (Network.HTTP.Client.Types.Response Data.ByteString.Internal.ByteString) -- ^ Monadic computation which returns the result of the operation
 getEpochs_Number_Raw number = GHC.Base.id (BlockfrostAPI.Common.doCallWithConfigurationM (Data.Text.toUpper GHC.Base.$ Data.Text.pack "GET") (Data.Text.pack ("/epochs/" GHC.Base.++ (Data.ByteString.Char8.unpack (Network.HTTP.Types.URI.urlEncode GHC.Types.True GHC.Base.$ (Data.ByteString.Char8.pack GHC.Base.$ BlockfrostAPI.Common.stringifyModel number)) GHC.Base.++ ""))) GHC.Base.mempty)
 -- | > GET /epochs/{number}
 -- 
 -- The same as 'getEpochs_Number_' but accepts an explicit configuration and returns the raw 'Data.ByteString.Char8.ByteString'.
 getEpochs_Number_WithConfigurationRaw :: forall m . BlockfrostAPI.Common.MonadHTTP m => BlockfrostAPI.Common.Configuration -- ^ The configuration to use in the request
-  -> Data.Text.Internal.Text -- ^ number: Number of the epoch
+  -> GHC.Integer.Type.Integer -- ^ number: Number of the epoch
   -> m (Network.HTTP.Client.Types.Response Data.ByteString.Internal.ByteString) -- ^ Monadic computation which returns the result of the operation
 getEpochs_Number_WithConfigurationRaw config
                                       number = GHC.Base.id (BlockfrostAPI.Common.doCallWithConfiguration config (Data.Text.toUpper GHC.Base.$ Data.Text.pack "GET") (Data.Text.pack ("/epochs/" GHC.Base.++ (Data.ByteString.Char8.unpack (Network.HTTP.Types.URI.urlEncode GHC.Types.True GHC.Base.$ (Data.ByteString.Char8.pack GHC.Base.$ BlockfrostAPI.Common.stringifyModel number)) GHC.Base.++ ""))) GHC.Base.mempty)

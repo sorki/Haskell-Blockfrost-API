@@ -6,3 +6,6 @@ instance Show TxContentStakeAddr
 instance Eq TxContentStakeAddr
 instance FromJSON TxContentStakeAddr
 instance ToJSON TxContentStakeAddr
+-- XXX: collision
+-- type TxContentStakeAddr = [TxContentStakeAddr]
+type TxContentStakeAddr' = [TxContentStakeAddr]

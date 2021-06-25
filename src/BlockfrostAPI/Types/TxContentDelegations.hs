@@ -31,7 +31,7 @@ import qualified GHC.Types
 import qualified BlockfrostAPI.Common
 import BlockfrostAPI.TypeAlias
 
--- | Defines the object schema located at @components.schemas.tx_content_delegations@ in the specification.
+-- | Defines the object schema located at @components.schemas.tx_content_delegations.items@ in the specification.
 -- 
 -- 
 data TxContentDelegations = TxContentDelegations {
@@ -64,3 +64,9 @@ mkTxContentDelegations txContentDelegationsActiveEpoch txContentDelegationsAddre
                                                                                                                                                                                              txContentDelegationsCertIndex = txContentDelegationsCertIndex,
                                                                                                                                                                                              txContentDelegationsIndex = txContentDelegationsIndex,
                                                                                                                                                                                              txContentDelegationsPoolId = txContentDelegationsPoolId}
+-- | Defines an alias for the schema located at @components.schemas.tx_content_delegations@ in the specification.
+-- 
+-- 
+-- XXX: collision
+-- type TxContentDelegations = [TxContentDelegations]
+type TxContentDelegations' = [TxContentDelegations]
