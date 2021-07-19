@@ -35,7 +35,7 @@ import BlockfrostAPI.TypeAlias
 -- 
 -- 
 data EpochStakePoolContent = EpochStakePoolContent {
-  -- | amount: Amount of delegated stake in Lovelaces
+  -- | amount: Amount of active delegated stake in Lovelaces
   epochStakePoolContentAmount :: Data.Text.Internal.Text
   -- | stake_address: Stake address
   , epochStakePoolContentStakeAddress :: Data.Text.Internal.Text

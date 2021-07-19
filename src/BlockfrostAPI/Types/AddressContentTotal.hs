@@ -35,8 +35,10 @@ import BlockfrostAPI.TypeAlias
 -- 
 -- 
 data AddressContentTotal = AddressContentTotal {
+  -- | address: Bech32 encoded address
+  addressContentTotalAddress :: Data.Text.Internal.Text
   -- | received_sum
-  addressContentTotalReceivedSum :: ([AddressContentTotalReceivedSum'])
+  , addressContentTotalReceivedSum :: ([AddressContentTotalReceivedSum'])
   -- | sent_sum
   , addressContentTotalSentSum :: ([AddressContentTotalSentSum'])
   -- | tx_count: Count of all transactions on the address
@@ -44,18 +46,20 @@ data AddressContentTotal = AddressContentTotal {
   } deriving (GHC.Show.Show
   , GHC.Classes.Eq)
 instance Data.Aeson.Types.ToJSON.ToJSON AddressContentTotal
-    where toJSON obj = Data.Aeson.Types.Internal.object ("received_sum" Data.Aeson.Types.ToJSON..= addressContentTotalReceivedSum obj : "sent_sum" Data.Aeson.Types.ToJSON..= addressContentTotalSentSum obj : "tx_count" Data.Aeson.Types.ToJSON..= addressContentTotalTxCount obj : GHC.Base.mempty)
-          toEncoding obj = Data.Aeson.Encoding.Internal.pairs (("received_sum" Data.Aeson.Types.ToJSON..= addressContentTotalReceivedSum obj) GHC.Base.<> (("sent_sum" Data.Aeson.Types.ToJSON..= addressContentTotalSentSum obj) GHC.Base.<> ("tx_count" Data.Aeson.Types.ToJSON..= addressContentTotalTxCount obj)))
+    where toJSON obj = Data.Aeson.Types.Internal.object ("address" Data.Aeson.Types.ToJSON..= addressContentTotalAddress obj : "received_sum" Data.Aeson.Types.ToJSON..= addressContentTotalReceivedSum obj : "sent_sum" Data.Aeson.Types.ToJSON..= addressContentTotalSentSum obj : "tx_count" Data.Aeson.Types.ToJSON..= addressContentTotalTxCount obj : GHC.Base.mempty)
+          toEncoding obj = Data.Aeson.Encoding.Internal.pairs (("address" Data.Aeson.Types.ToJSON..= addressContentTotalAddress obj) GHC.Base.<> (("received_sum" Data.Aeson.Types.ToJSON..= addressContentTotalReceivedSum obj) GHC.Base.<> (("sent_sum" Data.Aeson.Types.ToJSON..= addressContentTotalSentSum obj) GHC.Base.<> ("tx_count" Data.Aeson.Types.ToJSON..= addressContentTotalTxCount obj))))
 instance Data.Aeson.Types.FromJSON.FromJSON AddressContentTotal
-    where parseJSON = Data.Aeson.Types.FromJSON.withObject "AddressContentTotal" (\obj -> ((GHC.Base.pure AddressContentTotal GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "received_sum")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "sent_sum")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "tx_count"))
+    where parseJSON = Data.Aeson.Types.FromJSON.withObject "AddressContentTotal" (\obj -> (((GHC.Base.pure AddressContentTotal GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "address")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "received_sum")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "sent_sum")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "tx_count"))
 -- | Create a new 'AddressContentTotal' with all required fields.
-mkAddressContentTotal :: [AddressContentTotalReceivedSum'] -- ^ 'addressContentTotalReceivedSum'
+mkAddressContentTotal :: Data.Text.Internal.Text -- ^ 'addressContentTotalAddress'
+  -> [AddressContentTotalReceivedSum'] -- ^ 'addressContentTotalReceivedSum'
   -> [AddressContentTotalSentSum'] -- ^ 'addressContentTotalSentSum'
   -> GHC.Integer.Type.Integer -- ^ 'addressContentTotalTxCount'
   -> AddressContentTotal
-mkAddressContentTotal addressContentTotalReceivedSum addressContentTotalSentSum addressContentTotalTxCount = AddressContentTotal{addressContentTotalReceivedSum = addressContentTotalReceivedSum,
-                                                                                                                                 addressContentTotalSentSum = addressContentTotalSentSum,
-                                                                                                                                 addressContentTotalTxCount = addressContentTotalTxCount}
+mkAddressContentTotal addressContentTotalAddress addressContentTotalReceivedSum addressContentTotalSentSum addressContentTotalTxCount = AddressContentTotal{addressContentTotalAddress = addressContentTotalAddress,
+                                                                                                                                                            addressContentTotalReceivedSum = addressContentTotalReceivedSum,
+                                                                                                                                                            addressContentTotalSentSum = addressContentTotalSentSum,
+                                                                                                                                                            addressContentTotalTxCount = addressContentTotalTxCount}
 -- | Defines the object schema located at @components.schemas.address_content_total.properties.received_sum.items@ in the specification.
 -- 
 -- The sum of all the UTXO per asset

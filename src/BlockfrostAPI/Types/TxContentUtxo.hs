@@ -35,23 +35,27 @@ import BlockfrostAPI.TypeAlias
 -- 
 -- 
 data TxContentUtxo = TxContentUtxo {
+  -- | hash: Transaction hash
+  txContentUtxoHash :: Data.Text.Internal.Text
   -- | inputs
-  txContentUtxoInputs :: ([TxContentUtxoInputs'])
+  , txContentUtxoInputs :: ([TxContentUtxoInputs'])
   -- | outputs
   , txContentUtxoOutputs :: ([TxContentUtxoOutputs'])
   } deriving (GHC.Show.Show
   , GHC.Classes.Eq)
 instance Data.Aeson.Types.ToJSON.ToJSON TxContentUtxo
-    where toJSON obj = Data.Aeson.Types.Internal.object ("inputs" Data.Aeson.Types.ToJSON..= txContentUtxoInputs obj : "outputs" Data.Aeson.Types.ToJSON..= txContentUtxoOutputs obj : GHC.Base.mempty)
-          toEncoding obj = Data.Aeson.Encoding.Internal.pairs (("inputs" Data.Aeson.Types.ToJSON..= txContentUtxoInputs obj) GHC.Base.<> ("outputs" Data.Aeson.Types.ToJSON..= txContentUtxoOutputs obj))
+    where toJSON obj = Data.Aeson.Types.Internal.object ("hash" Data.Aeson.Types.ToJSON..= txContentUtxoHash obj : "inputs" Data.Aeson.Types.ToJSON..= txContentUtxoInputs obj : "outputs" Data.Aeson.Types.ToJSON..= txContentUtxoOutputs obj : GHC.Base.mempty)
+          toEncoding obj = Data.Aeson.Encoding.Internal.pairs (("hash" Data.Aeson.Types.ToJSON..= txContentUtxoHash obj) GHC.Base.<> (("inputs" Data.Aeson.Types.ToJSON..= txContentUtxoInputs obj) GHC.Base.<> ("outputs" Data.Aeson.Types.ToJSON..= txContentUtxoOutputs obj)))
 instance Data.Aeson.Types.FromJSON.FromJSON TxContentUtxo
-    where parseJSON = Data.Aeson.Types.FromJSON.withObject "TxContentUtxo" (\obj -> (GHC.Base.pure TxContentUtxo GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "inputs")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "outputs"))
+    where parseJSON = Data.Aeson.Types.FromJSON.withObject "TxContentUtxo" (\obj -> ((GHC.Base.pure TxContentUtxo GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "hash")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "inputs")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "outputs"))
 -- | Create a new 'TxContentUtxo' with all required fields.
-mkTxContentUtxo :: [TxContentUtxoInputs'] -- ^ 'txContentUtxoInputs'
+mkTxContentUtxo :: Data.Text.Internal.Text -- ^ 'txContentUtxoHash'
+  -> [TxContentUtxoInputs'] -- ^ 'txContentUtxoInputs'
   -> [TxContentUtxoOutputs'] -- ^ 'txContentUtxoOutputs'
   -> TxContentUtxo
-mkTxContentUtxo txContentUtxoInputs txContentUtxoOutputs = TxContentUtxo{txContentUtxoInputs = txContentUtxoInputs,
-                                                                         txContentUtxoOutputs = txContentUtxoOutputs}
+mkTxContentUtxo txContentUtxoHash txContentUtxoInputs txContentUtxoOutputs = TxContentUtxo{txContentUtxoHash = txContentUtxoHash,
+                                                                                           txContentUtxoInputs = txContentUtxoInputs,
+                                                                                           txContentUtxoOutputs = txContentUtxoOutputs}
 -- | Defines the object schema located at @components.schemas.tx_content_utxo.properties.inputs.items@ in the specification.
 -- 
 -- 
@@ -60,19 +64,27 @@ data TxContentUtxoInputs' = TxContentUtxoInputs' {
   txContentUtxoInputs'Address :: Data.Text.Internal.Text
   -- | amount
   , txContentUtxoInputs'Amount :: ([TxContentUtxoInputs'Amount'])
+  -- | output_index: UTXO index in the transaction
+  , txContentUtxoInputs'OutputIndex :: Data.Scientific.Scientific
+  -- | tx_hash: Hash of the UTXO transaction
+  , txContentUtxoInputs'TxHash :: Data.Text.Internal.Text
   } deriving (GHC.Show.Show
   , GHC.Classes.Eq)
 instance Data.Aeson.Types.ToJSON.ToJSON TxContentUtxoInputs'
-    where toJSON obj = Data.Aeson.Types.Internal.object ("address" Data.Aeson.Types.ToJSON..= txContentUtxoInputs'Address obj : "amount" Data.Aeson.Types.ToJSON..= txContentUtxoInputs'Amount obj : GHC.Base.mempty)
-          toEncoding obj = Data.Aeson.Encoding.Internal.pairs (("address" Data.Aeson.Types.ToJSON..= txContentUtxoInputs'Address obj) GHC.Base.<> ("amount" Data.Aeson.Types.ToJSON..= txContentUtxoInputs'Amount obj))
+    where toJSON obj = Data.Aeson.Types.Internal.object ("address" Data.Aeson.Types.ToJSON..= txContentUtxoInputs'Address obj : "amount" Data.Aeson.Types.ToJSON..= txContentUtxoInputs'Amount obj : "output_index" Data.Aeson.Types.ToJSON..= txContentUtxoInputs'OutputIndex obj : "tx_hash" Data.Aeson.Types.ToJSON..= txContentUtxoInputs'TxHash obj : GHC.Base.mempty)
+          toEncoding obj = Data.Aeson.Encoding.Internal.pairs (("address" Data.Aeson.Types.ToJSON..= txContentUtxoInputs'Address obj) GHC.Base.<> (("amount" Data.Aeson.Types.ToJSON..= txContentUtxoInputs'Amount obj) GHC.Base.<> (("output_index" Data.Aeson.Types.ToJSON..= txContentUtxoInputs'OutputIndex obj) GHC.Base.<> ("tx_hash" Data.Aeson.Types.ToJSON..= txContentUtxoInputs'TxHash obj))))
 instance Data.Aeson.Types.FromJSON.FromJSON TxContentUtxoInputs'
-    where parseJSON = Data.Aeson.Types.FromJSON.withObject "TxContentUtxoInputs'" (\obj -> (GHC.Base.pure TxContentUtxoInputs' GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "address")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "amount"))
+    where parseJSON = Data.Aeson.Types.FromJSON.withObject "TxContentUtxoInputs'" (\obj -> (((GHC.Base.pure TxContentUtxoInputs' GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "address")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "amount")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "output_index")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "tx_hash"))
 -- | Create a new 'TxContentUtxoInputs'' with all required fields.
 mkTxContentUtxoInputs' :: Data.Text.Internal.Text -- ^ 'txContentUtxoInputs'Address'
   -> [TxContentUtxoInputs'Amount'] -- ^ 'txContentUtxoInputs'Amount'
+  -> Data.Scientific.Scientific -- ^ 'txContentUtxoInputs'OutputIndex'
+  -> Data.Text.Internal.Text -- ^ 'txContentUtxoInputs'TxHash'
   -> TxContentUtxoInputs'
-mkTxContentUtxoInputs' txContentUtxoInputs'Address txContentUtxoInputs'Amount = TxContentUtxoInputs'{txContentUtxoInputs'Address = txContentUtxoInputs'Address,
-                                                                                                     txContentUtxoInputs'Amount = txContentUtxoInputs'Amount}
+mkTxContentUtxoInputs' txContentUtxoInputs'Address txContentUtxoInputs'Amount txContentUtxoInputs'OutputIndex txContentUtxoInputs'TxHash = TxContentUtxoInputs'{txContentUtxoInputs'Address = txContentUtxoInputs'Address,
+                                                                                                                                                                txContentUtxoInputs'Amount = txContentUtxoInputs'Amount,
+                                                                                                                                                                txContentUtxoInputs'OutputIndex = txContentUtxoInputs'OutputIndex,
+                                                                                                                                                                txContentUtxoInputs'TxHash = txContentUtxoInputs'TxHash}
 -- | Defines the object schema located at @components.schemas.tx_content_utxo.properties.inputs.items.properties.amount.items@ in the specification.
 -- 
 -- The sum of all the UTXO per asset

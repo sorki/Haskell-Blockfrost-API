@@ -35,8 +35,10 @@ import BlockfrostAPI.TypeAlias
 -- 
 -- 
 data AddressContent = AddressContent {
+  -- | address: Bech32 encoded addresses
+  addressContentAddress :: Data.Text.Internal.Text
   -- | amount
-  addressContentAmount :: ([AddressContentAmount'])
+  , addressContentAmount :: ([AddressContentAmount'])
   -- | stake_address: Stake address that controls the key
   , addressContentStakeAddress :: Data.Text.Internal.Text
   -- | type: Address era
@@ -44,18 +46,20 @@ data AddressContent = AddressContent {
   } deriving (GHC.Show.Show
   , GHC.Classes.Eq)
 instance Data.Aeson.Types.ToJSON.ToJSON AddressContent
-    where toJSON obj = Data.Aeson.Types.Internal.object ("amount" Data.Aeson.Types.ToJSON..= addressContentAmount obj : "stake_address" Data.Aeson.Types.ToJSON..= addressContentStakeAddress obj : "type" Data.Aeson.Types.ToJSON..= addressContentType obj : GHC.Base.mempty)
-          toEncoding obj = Data.Aeson.Encoding.Internal.pairs (("amount" Data.Aeson.Types.ToJSON..= addressContentAmount obj) GHC.Base.<> (("stake_address" Data.Aeson.Types.ToJSON..= addressContentStakeAddress obj) GHC.Base.<> ("type" Data.Aeson.Types.ToJSON..= addressContentType obj)))
+    where toJSON obj = Data.Aeson.Types.Internal.object ("address" Data.Aeson.Types.ToJSON..= addressContentAddress obj : "amount" Data.Aeson.Types.ToJSON..= addressContentAmount obj : "stake_address" Data.Aeson.Types.ToJSON..= addressContentStakeAddress obj : "type" Data.Aeson.Types.ToJSON..= addressContentType obj : GHC.Base.mempty)
+          toEncoding obj = Data.Aeson.Encoding.Internal.pairs (("address" Data.Aeson.Types.ToJSON..= addressContentAddress obj) GHC.Base.<> (("amount" Data.Aeson.Types.ToJSON..= addressContentAmount obj) GHC.Base.<> (("stake_address" Data.Aeson.Types.ToJSON..= addressContentStakeAddress obj) GHC.Base.<> ("type" Data.Aeson.Types.ToJSON..= addressContentType obj))))
 instance Data.Aeson.Types.FromJSON.FromJSON AddressContent
-    where parseJSON = Data.Aeson.Types.FromJSON.withObject "AddressContent" (\obj -> ((GHC.Base.pure AddressContent GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "amount")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "stake_address")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "type"))
+    where parseJSON = Data.Aeson.Types.FromJSON.withObject "AddressContent" (\obj -> (((GHC.Base.pure AddressContent GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "address")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "amount")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "stake_address")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "type"))
 -- | Create a new 'AddressContent' with all required fields.
-mkAddressContent :: [AddressContentAmount'] -- ^ 'addressContentAmount'
+mkAddressContent :: Data.Text.Internal.Text -- ^ 'addressContentAddress'
+  -> [AddressContentAmount'] -- ^ 'addressContentAmount'
   -> Data.Text.Internal.Text -- ^ 'addressContentStakeAddress'
   -> AddressContentType' -- ^ 'addressContentType'
   -> AddressContent
-mkAddressContent addressContentAmount addressContentStakeAddress addressContentType = AddressContent{addressContentAmount = addressContentAmount,
-                                                                                                     addressContentStakeAddress = addressContentStakeAddress,
-                                                                                                     addressContentType = addressContentType}
+mkAddressContent addressContentAddress addressContentAmount addressContentStakeAddress addressContentType = AddressContent{addressContentAddress = addressContentAddress,
+                                                                                                                           addressContentAmount = addressContentAmount,
+                                                                                                                           addressContentStakeAddress = addressContentStakeAddress,
+                                                                                                                           addressContentType = addressContentType}
 -- | Defines the object schema located at @components.schemas.address_content.properties.amount.items@ in the specification.
 -- 
 -- The sum of all the UTXO per asset

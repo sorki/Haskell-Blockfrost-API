@@ -83,10 +83,14 @@ data GetPoolsPoolIdMetadataResponseBody200 = GetPoolsPoolIdMetadataResponseBody2
   getPoolsPoolIdMetadataResponseBody200Description :: (GHC.Maybe.Maybe Data.Text.Internal.Text)
   -- | hash: Hash of the metadata file
   , getPoolsPoolIdMetadataResponseBody200Hash :: (GHC.Maybe.Maybe Data.Text.Internal.Text)
+  -- | hex: Hexadecimal pool ID
+  , getPoolsPoolIdMetadataResponseBody200Hex :: (GHC.Maybe.Maybe Data.Text.Internal.Text)
   -- | homepage: Home page of the stake pool
   , getPoolsPoolIdMetadataResponseBody200Homepage :: (GHC.Maybe.Maybe Data.Text.Internal.Text)
   -- | name: Name of the stake pool
   , getPoolsPoolIdMetadataResponseBody200Name :: (GHC.Maybe.Maybe Data.Text.Internal.Text)
+  -- | pool_id: Bech32 pool ID
+  , getPoolsPoolIdMetadataResponseBody200PoolId :: (GHC.Maybe.Maybe Data.Text.Internal.Text)
   -- | ticker: Ticker of the stake pool
   , getPoolsPoolIdMetadataResponseBody200Ticker :: (GHC.Maybe.Maybe Data.Text.Internal.Text)
   -- | url: URL to the stake pool metadata
@@ -94,16 +98,18 @@ data GetPoolsPoolIdMetadataResponseBody200 = GetPoolsPoolIdMetadataResponseBody2
   } deriving (GHC.Show.Show
   , GHC.Classes.Eq)
 instance Data.Aeson.Types.ToJSON.ToJSON GetPoolsPoolIdMetadataResponseBody200
-    where toJSON obj = Data.Aeson.Types.Internal.object ("description" Data.Aeson.Types.ToJSON..= getPoolsPoolIdMetadataResponseBody200Description obj : "hash" Data.Aeson.Types.ToJSON..= getPoolsPoolIdMetadataResponseBody200Hash obj : "homepage" Data.Aeson.Types.ToJSON..= getPoolsPoolIdMetadataResponseBody200Homepage obj : "name" Data.Aeson.Types.ToJSON..= getPoolsPoolIdMetadataResponseBody200Name obj : "ticker" Data.Aeson.Types.ToJSON..= getPoolsPoolIdMetadataResponseBody200Ticker obj : "url" Data.Aeson.Types.ToJSON..= getPoolsPoolIdMetadataResponseBody200Url obj : GHC.Base.mempty)
-          toEncoding obj = Data.Aeson.Encoding.Internal.pairs (("description" Data.Aeson.Types.ToJSON..= getPoolsPoolIdMetadataResponseBody200Description obj) GHC.Base.<> (("hash" Data.Aeson.Types.ToJSON..= getPoolsPoolIdMetadataResponseBody200Hash obj) GHC.Base.<> (("homepage" Data.Aeson.Types.ToJSON..= getPoolsPoolIdMetadataResponseBody200Homepage obj) GHC.Base.<> (("name" Data.Aeson.Types.ToJSON..= getPoolsPoolIdMetadataResponseBody200Name obj) GHC.Base.<> (("ticker" Data.Aeson.Types.ToJSON..= getPoolsPoolIdMetadataResponseBody200Ticker obj) GHC.Base.<> ("url" Data.Aeson.Types.ToJSON..= getPoolsPoolIdMetadataResponseBody200Url obj))))))
+    where toJSON obj = Data.Aeson.Types.Internal.object ("description" Data.Aeson.Types.ToJSON..= getPoolsPoolIdMetadataResponseBody200Description obj : "hash" Data.Aeson.Types.ToJSON..= getPoolsPoolIdMetadataResponseBody200Hash obj : "hex" Data.Aeson.Types.ToJSON..= getPoolsPoolIdMetadataResponseBody200Hex obj : "homepage" Data.Aeson.Types.ToJSON..= getPoolsPoolIdMetadataResponseBody200Homepage obj : "name" Data.Aeson.Types.ToJSON..= getPoolsPoolIdMetadataResponseBody200Name obj : "pool_id" Data.Aeson.Types.ToJSON..= getPoolsPoolIdMetadataResponseBody200PoolId obj : "ticker" Data.Aeson.Types.ToJSON..= getPoolsPoolIdMetadataResponseBody200Ticker obj : "url" Data.Aeson.Types.ToJSON..= getPoolsPoolIdMetadataResponseBody200Url obj : GHC.Base.mempty)
+          toEncoding obj = Data.Aeson.Encoding.Internal.pairs (("description" Data.Aeson.Types.ToJSON..= getPoolsPoolIdMetadataResponseBody200Description obj) GHC.Base.<> (("hash" Data.Aeson.Types.ToJSON..= getPoolsPoolIdMetadataResponseBody200Hash obj) GHC.Base.<> (("hex" Data.Aeson.Types.ToJSON..= getPoolsPoolIdMetadataResponseBody200Hex obj) GHC.Base.<> (("homepage" Data.Aeson.Types.ToJSON..= getPoolsPoolIdMetadataResponseBody200Homepage obj) GHC.Base.<> (("name" Data.Aeson.Types.ToJSON..= getPoolsPoolIdMetadataResponseBody200Name obj) GHC.Base.<> (("pool_id" Data.Aeson.Types.ToJSON..= getPoolsPoolIdMetadataResponseBody200PoolId obj) GHC.Base.<> (("ticker" Data.Aeson.Types.ToJSON..= getPoolsPoolIdMetadataResponseBody200Ticker obj) GHC.Base.<> ("url" Data.Aeson.Types.ToJSON..= getPoolsPoolIdMetadataResponseBody200Url obj))))))))
 instance Data.Aeson.Types.FromJSON.FromJSON GetPoolsPoolIdMetadataResponseBody200
-    where parseJSON = Data.Aeson.Types.FromJSON.withObject "GetPoolsPoolIdMetadataResponseBody200" (\obj -> (((((GHC.Base.pure GetPoolsPoolIdMetadataResponseBody200 GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..:? "description")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..:? "hash")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..:? "homepage")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..:? "name")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..:? "ticker")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..:? "url"))
+    where parseJSON = Data.Aeson.Types.FromJSON.withObject "GetPoolsPoolIdMetadataResponseBody200" (\obj -> (((((((GHC.Base.pure GetPoolsPoolIdMetadataResponseBody200 GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..:? "description")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..:? "hash")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..:? "hex")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..:? "homepage")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..:? "name")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..:? "pool_id")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..:? "ticker")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..:? "url"))
 -- | Create a new 'GetPoolsPoolIdMetadataResponseBody200' with all required fields.
 mkGetPoolsPoolIdMetadataResponseBody200 :: GetPoolsPoolIdMetadataResponseBody200
 mkGetPoolsPoolIdMetadataResponseBody200 = GetPoolsPoolIdMetadataResponseBody200{getPoolsPoolIdMetadataResponseBody200Description = GHC.Maybe.Nothing,
                                                                                 getPoolsPoolIdMetadataResponseBody200Hash = GHC.Maybe.Nothing,
+                                                                                getPoolsPoolIdMetadataResponseBody200Hex = GHC.Maybe.Nothing,
                                                                                 getPoolsPoolIdMetadataResponseBody200Homepage = GHC.Maybe.Nothing,
                                                                                 getPoolsPoolIdMetadataResponseBody200Name = GHC.Maybe.Nothing,
+                                                                                getPoolsPoolIdMetadataResponseBody200PoolId = GHC.Maybe.Nothing,
                                                                                 getPoolsPoolIdMetadataResponseBody200Ticker = GHC.Maybe.Nothing,
                                                                                 getPoolsPoolIdMetadataResponseBody200Url = GHC.Maybe.Nothing}
 -- | Defines the object schema located at @components.responses.bad_request.content.application\/json.schema@ in the specification.

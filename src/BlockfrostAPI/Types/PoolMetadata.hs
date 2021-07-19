@@ -39,10 +39,14 @@ data PoolMetadata = PoolMetadata {
   poolMetadataDescription :: Data.Text.Internal.Text
   -- | hash: Hash of the metadata file
   , poolMetadataHash :: Data.Text.Internal.Text
+  -- | hex: Hexadecimal pool ID
+  , poolMetadataHex :: Data.Text.Internal.Text
   -- | homepage: Home page of the stake pool
   , poolMetadataHomepage :: Data.Text.Internal.Text
   -- | name: Name of the stake pool
   , poolMetadataName :: Data.Text.Internal.Text
+  -- | pool_id: Bech32 pool ID
+  , poolMetadataPoolId :: Data.Text.Internal.Text
   -- | ticker: Ticker of the stake pool
   , poolMetadataTicker :: Data.Text.Internal.Text
   -- | url: URL to the stake pool metadata
@@ -50,21 +54,25 @@ data PoolMetadata = PoolMetadata {
   } deriving (GHC.Show.Show
   , GHC.Classes.Eq)
 instance Data.Aeson.Types.ToJSON.ToJSON PoolMetadata
-    where toJSON obj = Data.Aeson.Types.Internal.object ("description" Data.Aeson.Types.ToJSON..= poolMetadataDescription obj : "hash" Data.Aeson.Types.ToJSON..= poolMetadataHash obj : "homepage" Data.Aeson.Types.ToJSON..= poolMetadataHomepage obj : "name" Data.Aeson.Types.ToJSON..= poolMetadataName obj : "ticker" Data.Aeson.Types.ToJSON..= poolMetadataTicker obj : "url" Data.Aeson.Types.ToJSON..= poolMetadataUrl obj : GHC.Base.mempty)
-          toEncoding obj = Data.Aeson.Encoding.Internal.pairs (("description" Data.Aeson.Types.ToJSON..= poolMetadataDescription obj) GHC.Base.<> (("hash" Data.Aeson.Types.ToJSON..= poolMetadataHash obj) GHC.Base.<> (("homepage" Data.Aeson.Types.ToJSON..= poolMetadataHomepage obj) GHC.Base.<> (("name" Data.Aeson.Types.ToJSON..= poolMetadataName obj) GHC.Base.<> (("ticker" Data.Aeson.Types.ToJSON..= poolMetadataTicker obj) GHC.Base.<> ("url" Data.Aeson.Types.ToJSON..= poolMetadataUrl obj))))))
+    where toJSON obj = Data.Aeson.Types.Internal.object ("description" Data.Aeson.Types.ToJSON..= poolMetadataDescription obj : "hash" Data.Aeson.Types.ToJSON..= poolMetadataHash obj : "hex" Data.Aeson.Types.ToJSON..= poolMetadataHex obj : "homepage" Data.Aeson.Types.ToJSON..= poolMetadataHomepage obj : "name" Data.Aeson.Types.ToJSON..= poolMetadataName obj : "pool_id" Data.Aeson.Types.ToJSON..= poolMetadataPoolId obj : "ticker" Data.Aeson.Types.ToJSON..= poolMetadataTicker obj : "url" Data.Aeson.Types.ToJSON..= poolMetadataUrl obj : GHC.Base.mempty)
+          toEncoding obj = Data.Aeson.Encoding.Internal.pairs (("description" Data.Aeson.Types.ToJSON..= poolMetadataDescription obj) GHC.Base.<> (("hash" Data.Aeson.Types.ToJSON..= poolMetadataHash obj) GHC.Base.<> (("hex" Data.Aeson.Types.ToJSON..= poolMetadataHex obj) GHC.Base.<> (("homepage" Data.Aeson.Types.ToJSON..= poolMetadataHomepage obj) GHC.Base.<> (("name" Data.Aeson.Types.ToJSON..= poolMetadataName obj) GHC.Base.<> (("pool_id" Data.Aeson.Types.ToJSON..= poolMetadataPoolId obj) GHC.Base.<> (("ticker" Data.Aeson.Types.ToJSON..= poolMetadataTicker obj) GHC.Base.<> ("url" Data.Aeson.Types.ToJSON..= poolMetadataUrl obj))))))))
 instance Data.Aeson.Types.FromJSON.FromJSON PoolMetadata
-    where parseJSON = Data.Aeson.Types.FromJSON.withObject "PoolMetadata" (\obj -> (((((GHC.Base.pure PoolMetadata GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "description")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "hash")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "homepage")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "name")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "ticker")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "url"))
+    where parseJSON = Data.Aeson.Types.FromJSON.withObject "PoolMetadata" (\obj -> (((((((GHC.Base.pure PoolMetadata GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "description")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "hash")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "hex")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "homepage")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "name")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "pool_id")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "ticker")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "url"))
 -- | Create a new 'PoolMetadata' with all required fields.
 mkPoolMetadata :: Data.Text.Internal.Text -- ^ 'poolMetadataDescription'
   -> Data.Text.Internal.Text -- ^ 'poolMetadataHash'
+  -> Data.Text.Internal.Text -- ^ 'poolMetadataHex'
   -> Data.Text.Internal.Text -- ^ 'poolMetadataHomepage'
   -> Data.Text.Internal.Text -- ^ 'poolMetadataName'
+  -> Data.Text.Internal.Text -- ^ 'poolMetadataPoolId'
   -> Data.Text.Internal.Text -- ^ 'poolMetadataTicker'
   -> Data.Text.Internal.Text -- ^ 'poolMetadataUrl'
   -> PoolMetadata
-mkPoolMetadata poolMetadataDescription poolMetadataHash poolMetadataHomepage poolMetadataName poolMetadataTicker poolMetadataUrl = PoolMetadata{poolMetadataDescription = poolMetadataDescription,
-                                                                                                                                                poolMetadataHash = poolMetadataHash,
-                                                                                                                                                poolMetadataHomepage = poolMetadataHomepage,
-                                                                                                                                                poolMetadataName = poolMetadataName,
-                                                                                                                                                poolMetadataTicker = poolMetadataTicker,
-                                                                                                                                                poolMetadataUrl = poolMetadataUrl}
+mkPoolMetadata poolMetadataDescription poolMetadataHash poolMetadataHex poolMetadataHomepage poolMetadataName poolMetadataPoolId poolMetadataTicker poolMetadataUrl = PoolMetadata{poolMetadataDescription = poolMetadataDescription,
+                                                                                                                                                                                   poolMetadataHash = poolMetadataHash,
+                                                                                                                                                                                   poolMetadataHex = poolMetadataHex,
+                                                                                                                                                                                   poolMetadataHomepage = poolMetadataHomepage,
+                                                                                                                                                                                   poolMetadataName = poolMetadataName,
+                                                                                                                                                                                   poolMetadataPoolId = poolMetadataPoolId,
+                                                                                                                                                                                   poolMetadataTicker = poolMetadataTicker,
+                                                                                                                                                                                   poolMetadataUrl = poolMetadataUrl}
