@@ -31,7 +31,7 @@ import qualified GHC.Types
 import qualified BlockfrostAPI.Common
 import BlockfrostAPI.TypeAlias
 
--- | Defines the object schema located at @components.schemas.nutlink_tickers_ticker.items@ in the specification.
+-- | Defines the object schema located at @components.schemas.nutlink_tickers_ticker@ in the specification.
 -- 
 -- 
 data NutlinkTickersTicker = NutlinkTickersTicker {
@@ -64,7 +64,7 @@ mkNutlinkTickersTicker nutlinkTickersTickerAddress nutlinkTickersTickerBlockHeig
                                                                                                                                                                                              nutlinkTickersTickerPayload = nutlinkTickersTickerPayload,
                                                                                                                                                                                              nutlinkTickersTickerTxHash = nutlinkTickersTickerTxHash,
                                                                                                                                                                                              nutlinkTickersTickerTxIndex = nutlinkTickersTickerTxIndex}
--- | Defines the oneOf schema located at @components.schemas.nutlink_tickers_ticker.items.properties.payload.anyOf@ in the specification.
+-- | Defines the oneOf schema located at @components.schemas.nutlink_tickers_ticker.properties.payload.anyOf@ in the specification.
 -- 
 -- Content of the ticker
 data NutlinkTickersTickerPayload'Variants =
@@ -86,9 +86,3 @@ instance Data.Aeson.Types.FromJSON.FromJSON NutlinkTickersTickerPayload'Variants
     where parseJSON val = case (NutlinkTickersTickerPayload'Text Data.Functor.<$> Data.Aeson.Types.FromJSON.fromJSON val) GHC.Base.<|> ((NutlinkTickersTickerPayload'Object Data.Functor.<$> Data.Aeson.Types.FromJSON.fromJSON val) GHC.Base.<|> ((NutlinkTickersTickerPayload'ListTObject Data.Functor.<$> Data.Aeson.Types.FromJSON.fromJSON val) GHC.Base.<|> ((NutlinkTickersTickerPayload'Integer Data.Functor.<$> Data.Aeson.Types.FromJSON.fromJSON val) GHC.Base.<|> ((NutlinkTickersTickerPayload'Scientific Data.Functor.<$> Data.Aeson.Types.FromJSON.fromJSON val) GHC.Base.<|> ((NutlinkTickersTickerPayload'Bool Data.Functor.<$> Data.Aeson.Types.FromJSON.fromJSON val) GHC.Base.<|> Data.Aeson.Types.Internal.Error "No variant matched"))))) of
                               Data.Aeson.Types.Internal.Success a -> GHC.Base.pure a
                               Data.Aeson.Types.Internal.Error a -> Control.Monad.Fail.fail a
--- | Defines an alias for the schema located at @components.schemas.nutlink_tickers_ticker@ in the specification.
--- 
--- 
--- XXX: collision
--- type NutlinkTickersTicker = [NutlinkTickersTicker]
-type NutlinkTickersTicker' = [NutlinkTickersTicker]
