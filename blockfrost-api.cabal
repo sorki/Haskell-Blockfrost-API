@@ -121,9 +121,9 @@ library
       BlockfrostAPI.Types.Pool
       BlockfrostAPI.Types.PoolDelegator
       BlockfrostAPI.Types.PoolHistory
-      BlockfrostAPI.Types.PoolListRetire
       BlockfrostAPI.Types.PoolMetadata
       BlockfrostAPI.Types.PoolRelays
+      BlockfrostAPI.Types.PoolRetiring
       BlockfrostAPI.Types.PoolUpdates
       BlockfrostAPI.Types.ShortAsset
       BlockfrostAPI.Types.TxContent

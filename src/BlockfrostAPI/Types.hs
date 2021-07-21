@@ -36,9 +36,9 @@ module BlockfrostAPI.Types (
   module BlockfrostAPI.Types.Pool,
   module BlockfrostAPI.Types.PoolDelegator,
   module BlockfrostAPI.Types.PoolHistory,
-  module BlockfrostAPI.Types.PoolListRetire,
   module BlockfrostAPI.Types.PoolMetadata,
   module BlockfrostAPI.Types.PoolRelays,
+  module BlockfrostAPI.Types.PoolRetiring,
   module BlockfrostAPI.Types.PoolUpdates,
   module BlockfrostAPI.Types.ShortAsset,
   module BlockfrostAPI.Types.TxContent,
@@ -90,9 +90,9 @@ import BlockfrostAPI.Types.NutlinkTickersTicker
 import BlockfrostAPI.Types.Pool
 import BlockfrostAPI.Types.PoolDelegator
 import BlockfrostAPI.Types.PoolHistory
-import BlockfrostAPI.Types.PoolListRetire
 import BlockfrostAPI.Types.PoolMetadata
 import BlockfrostAPI.Types.PoolRelays
+import BlockfrostAPI.Types.PoolRetiring
 import BlockfrostAPI.Types.PoolUpdates
 import BlockfrostAPI.Types.ShortAsset
 import BlockfrostAPI.Types.TxContent
