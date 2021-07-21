@@ -32,6 +32,7 @@ import qualified BlockfrostAPI.Common
 import {-# SOURCE #-} BlockfrostAPI.Types.AccountAddressesAsset
 import {-# SOURCE #-} BlockfrostAPI.Types.AccountAddressesContent
 import {-# SOURCE #-} BlockfrostAPI.Types.AccountDelegationContent
+import {-# SOURCE #-} BlockfrostAPI.Types.AccountHistoryContent
 import {-# SOURCE #-} BlockfrostAPI.Types.AddressUtxoContent
 import {-# SOURCE #-} BlockfrostAPI.Types.BlockContent
 import {-# SOURCE #-} BlockfrostAPI.Types.EpochContent
@@ -86,6 +87,11 @@ type AddressUtxoContents = [AddressUtxoContent]
 -- 
 -- 
 type AddressTxsContent = [Data.Text.Internal.Text]
+
+-- | Defines an alias for the schema located at @components.schemas.account_history_contents@ in the specification.
+-- 
+-- 
+type AccountHistoryContents = [AccountHistoryContent]
 
 -- | Defines an alias for the schema located at @components.schemas.account_delegation_contents@ in the specification.
 -- 

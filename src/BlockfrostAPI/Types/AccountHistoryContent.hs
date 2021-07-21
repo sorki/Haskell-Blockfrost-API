@@ -31,7 +31,7 @@ import qualified GHC.Types
 import qualified BlockfrostAPI.Common
 import BlockfrostAPI.TypeAlias
 
--- | Defines the object schema located at @components.schemas.account_history_content.items@ in the specification.
+-- | Defines the object schema located at @components.schemas.account_history_content@ in the specification.
 -- 
 -- 
 data AccountHistoryContent = AccountHistoryContent {
@@ -56,9 +56,3 @@ mkAccountHistoryContent :: GHC.Integer.Type.Integer -- ^ 'accountHistoryContentA
 mkAccountHistoryContent accountHistoryContentActiveEpoch accountHistoryContentAmount accountHistoryContentPoolId = AccountHistoryContent{accountHistoryContentActiveEpoch = accountHistoryContentActiveEpoch,
                                                                                                                                          accountHistoryContentAmount = accountHistoryContentAmount,
                                                                                                                                          accountHistoryContentPoolId = accountHistoryContentPoolId}
--- | Defines an alias for the schema located at @components.schemas.account_history_content@ in the specification.
--- 
--- 
--- XXX: collision
--- type AccountHistoryContent = [AccountHistoryContent]
-type AccountHistoryContent' = [AccountHistoryContent]
