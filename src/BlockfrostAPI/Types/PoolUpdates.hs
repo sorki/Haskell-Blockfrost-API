@@ -62,17 +62,17 @@ mkPoolUpdates poolUpdatesAction poolUpdatesCertIndex poolUpdatesTxHash = PoolUpd
 data PoolUpdatesAction' =
    PoolUpdatesAction'Other Data.Aeson.Types.Internal.Value -- ^ This case is used if the value encountered during decoding does not match any of the provided cases in the specification.
   | PoolUpdatesAction'Typed Data.Text.Internal.Text -- ^ This constructor can be used to send values to the server which are not present in the specification yet.
-  | PoolUpdatesAction'EnumDeregistered -- ^ Represents the JSON value @"deregistered"@
   | PoolUpdatesAction'EnumRegistered -- ^ Represents the JSON value @"registered"@
+  | PoolUpdatesAction'EnumDeregistered -- ^ Represents the JSON value @"deregistered"@
   deriving (GHC.Show.Show, GHC.Classes.Eq)
 instance Data.Aeson.Types.ToJSON.ToJSON PoolUpdatesAction'
     where toJSON (PoolUpdatesAction'Other val) = val
           toJSON (PoolUpdatesAction'Typed val) = Data.Aeson.Types.ToJSON.toJSON val
-          toJSON (PoolUpdatesAction'EnumDeregistered) = "deregistered"
           toJSON (PoolUpdatesAction'EnumRegistered) = "registered"
+          toJSON (PoolUpdatesAction'EnumDeregistered) = "deregistered"
 instance Data.Aeson.Types.FromJSON.FromJSON PoolUpdatesAction'
-    where parseJSON val = GHC.Base.pure (if | val GHC.Classes.== "deregistered" -> PoolUpdatesAction'EnumDeregistered
-                                            | val GHC.Classes.== "registered" -> PoolUpdatesAction'EnumRegistered
+    where parseJSON val = GHC.Base.pure (if | val GHC.Classes.== "registered" -> PoolUpdatesAction'EnumRegistered
+                                            | val GHC.Classes.== "deregistered" -> PoolUpdatesAction'EnumDeregistered
                                             | GHC.Base.otherwise -> PoolUpdatesAction'Other val)
 -- | Defines an alias for the schema located at @components.schemas.pool_updates@ in the specification.
 -- 

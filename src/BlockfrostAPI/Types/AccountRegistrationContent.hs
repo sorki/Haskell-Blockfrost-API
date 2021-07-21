@@ -58,17 +58,17 @@ mkAccountRegistrationContent accountRegistrationContentAction accountRegistratio
 data AccountRegistrationContentAction' =
    AccountRegistrationContentAction'Other Data.Aeson.Types.Internal.Value -- ^ This case is used if the value encountered during decoding does not match any of the provided cases in the specification.
   | AccountRegistrationContentAction'Typed Data.Text.Internal.Text -- ^ This constructor can be used to send values to the server which are not present in the specification yet.
-  | AccountRegistrationContentAction'EnumDeregistered -- ^ Represents the JSON value @"deregistered"@
   | AccountRegistrationContentAction'EnumRegistered -- ^ Represents the JSON value @"registered"@
+  | AccountRegistrationContentAction'EnumDeregistered -- ^ Represents the JSON value @"deregistered"@
   deriving (GHC.Show.Show, GHC.Classes.Eq)
 instance Data.Aeson.Types.ToJSON.ToJSON AccountRegistrationContentAction'
     where toJSON (AccountRegistrationContentAction'Other val) = val
           toJSON (AccountRegistrationContentAction'Typed val) = Data.Aeson.Types.ToJSON.toJSON val
-          toJSON (AccountRegistrationContentAction'EnumDeregistered) = "deregistered"
           toJSON (AccountRegistrationContentAction'EnumRegistered) = "registered"
+          toJSON (AccountRegistrationContentAction'EnumDeregistered) = "deregistered"
 instance Data.Aeson.Types.FromJSON.FromJSON AccountRegistrationContentAction'
-    where parseJSON val = GHC.Base.pure (if | val GHC.Classes.== "deregistered" -> AccountRegistrationContentAction'EnumDeregistered
-                                            | val GHC.Classes.== "registered" -> AccountRegistrationContentAction'EnumRegistered
+    where parseJSON val = GHC.Base.pure (if | val GHC.Classes.== "registered" -> AccountRegistrationContentAction'EnumRegistered
+                                            | val GHC.Classes.== "deregistered" -> AccountRegistrationContentAction'EnumDeregistered
                                             | GHC.Base.otherwise -> AccountRegistrationContentAction'Other val)
 -- | Defines an alias for the schema located at @components.schemas.account_registration_content@ in the specification.
 -- 

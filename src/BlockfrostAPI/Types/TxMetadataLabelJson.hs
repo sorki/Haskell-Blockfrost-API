@@ -57,21 +57,21 @@ mkTxMetadataLabelJson txMetadataLabelJsonJsonMetadata txMetadataLabelJsonTxHash 
 -- Content of the JSON metadata
 data TxMetadataLabelJsonJsonMetadata'Variants =
    TxMetadataLabelJsonJsonMetadata'Text Data.Text.Internal.Text
-  | TxMetadataLabelJsonJsonMetadata'Scientific Data.Scientific.Scientific
-  | TxMetadataLabelJsonJsonMetadata'Integer GHC.Integer.Type.Integer
-  | TxMetadataLabelJsonJsonMetadata'Bool GHC.Types.Bool
   | TxMetadataLabelJsonJsonMetadata'Object Data.Aeson.Types.Internal.Object
   | TxMetadataLabelJsonJsonMetadata'ListTObject ([Data.Aeson.Types.Internal.Object])
+  | TxMetadataLabelJsonJsonMetadata'Integer GHC.Integer.Type.Integer
+  | TxMetadataLabelJsonJsonMetadata'Scientific Data.Scientific.Scientific
+  | TxMetadataLabelJsonJsonMetadata'Bool GHC.Types.Bool
   deriving (GHC.Show.Show, GHC.Classes.Eq)
 instance Data.Aeson.Types.ToJSON.ToJSON TxMetadataLabelJsonJsonMetadata'Variants
     where toJSON (TxMetadataLabelJsonJsonMetadata'Text a) = Data.Aeson.Types.ToJSON.toJSON a
-          toJSON (TxMetadataLabelJsonJsonMetadata'Scientific a) = Data.Aeson.Types.ToJSON.toJSON a
-          toJSON (TxMetadataLabelJsonJsonMetadata'Integer a) = Data.Aeson.Types.ToJSON.toJSON a
-          toJSON (TxMetadataLabelJsonJsonMetadata'Bool a) = Data.Aeson.Types.ToJSON.toJSON a
           toJSON (TxMetadataLabelJsonJsonMetadata'Object a) = Data.Aeson.Types.ToJSON.toJSON a
           toJSON (TxMetadataLabelJsonJsonMetadata'ListTObject a) = Data.Aeson.Types.ToJSON.toJSON a
+          toJSON (TxMetadataLabelJsonJsonMetadata'Integer a) = Data.Aeson.Types.ToJSON.toJSON a
+          toJSON (TxMetadataLabelJsonJsonMetadata'Scientific a) = Data.Aeson.Types.ToJSON.toJSON a
+          toJSON (TxMetadataLabelJsonJsonMetadata'Bool a) = Data.Aeson.Types.ToJSON.toJSON a
 instance Data.Aeson.Types.FromJSON.FromJSON TxMetadataLabelJsonJsonMetadata'Variants
-    where parseJSON val = case (TxMetadataLabelJsonJsonMetadata'Text Data.Functor.<$> Data.Aeson.Types.FromJSON.fromJSON val) GHC.Base.<|> ((TxMetadataLabelJsonJsonMetadata'Scientific Data.Functor.<$> Data.Aeson.Types.FromJSON.fromJSON val) GHC.Base.<|> ((TxMetadataLabelJsonJsonMetadata'Integer Data.Functor.<$> Data.Aeson.Types.FromJSON.fromJSON val) GHC.Base.<|> ((TxMetadataLabelJsonJsonMetadata'Bool Data.Functor.<$> Data.Aeson.Types.FromJSON.fromJSON val) GHC.Base.<|> ((TxMetadataLabelJsonJsonMetadata'Object Data.Functor.<$> Data.Aeson.Types.FromJSON.fromJSON val) GHC.Base.<|> ((TxMetadataLabelJsonJsonMetadata'ListTObject Data.Functor.<$> Data.Aeson.Types.FromJSON.fromJSON val) GHC.Base.<|> Data.Aeson.Types.Internal.Error "No variant matched"))))) of
+    where parseJSON val = case (TxMetadataLabelJsonJsonMetadata'Text Data.Functor.<$> Data.Aeson.Types.FromJSON.fromJSON val) GHC.Base.<|> ((TxMetadataLabelJsonJsonMetadata'Object Data.Functor.<$> Data.Aeson.Types.FromJSON.fromJSON val) GHC.Base.<|> ((TxMetadataLabelJsonJsonMetadata'ListTObject Data.Functor.<$> Data.Aeson.Types.FromJSON.fromJSON val) GHC.Base.<|> ((TxMetadataLabelJsonJsonMetadata'Integer Data.Functor.<$> Data.Aeson.Types.FromJSON.fromJSON val) GHC.Base.<|> ((TxMetadataLabelJsonJsonMetadata'Scientific Data.Functor.<$> Data.Aeson.Types.FromJSON.fromJSON val) GHC.Base.<|> ((TxMetadataLabelJsonJsonMetadata'Bool Data.Functor.<$> Data.Aeson.Types.FromJSON.fromJSON val) GHC.Base.<|> Data.Aeson.Types.Internal.Error "No variant matched"))))) of
                               Data.Aeson.Types.Internal.Success a -> GHC.Base.pure a
                               Data.Aeson.Types.Internal.Error a -> Control.Monad.Fail.fail a
 -- | Defines an alias for the schema located at @components.schemas.tx_metadata_label_json@ in the specification.

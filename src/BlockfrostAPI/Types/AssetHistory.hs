@@ -62,17 +62,17 @@ mkAssetHistory assetHistoryAction assetHistoryAmount assetHistoryTxHash = AssetH
 data AssetHistoryAction' =
    AssetHistoryAction'Other Data.Aeson.Types.Internal.Value -- ^ This case is used if the value encountered during decoding does not match any of the provided cases in the specification.
   | AssetHistoryAction'Typed Data.Text.Internal.Text -- ^ This constructor can be used to send values to the server which are not present in the specification yet.
-  | AssetHistoryAction'EnumBurned -- ^ Represents the JSON value @"burned"@
   | AssetHistoryAction'EnumMinted -- ^ Represents the JSON value @"minted"@
+  | AssetHistoryAction'EnumBurned -- ^ Represents the JSON value @"burned"@
   deriving (GHC.Show.Show, GHC.Classes.Eq)
 instance Data.Aeson.Types.ToJSON.ToJSON AssetHistoryAction'
     where toJSON (AssetHistoryAction'Other val) = val
           toJSON (AssetHistoryAction'Typed val) = Data.Aeson.Types.ToJSON.toJSON val
-          toJSON (AssetHistoryAction'EnumBurned) = "burned"
           toJSON (AssetHistoryAction'EnumMinted) = "minted"
+          toJSON (AssetHistoryAction'EnumBurned) = "burned"
 instance Data.Aeson.Types.FromJSON.FromJSON AssetHistoryAction'
-    where parseJSON val = GHC.Base.pure (if | val GHC.Classes.== "burned" -> AssetHistoryAction'EnumBurned
-                                            | val GHC.Classes.== "minted" -> AssetHistoryAction'EnumMinted
+    where parseJSON val = GHC.Base.pure (if | val GHC.Classes.== "minted" -> AssetHistoryAction'EnumMinted
+                                            | val GHC.Classes.== "burned" -> AssetHistoryAction'EnumBurned
                                             | GHC.Base.otherwise -> AssetHistoryAction'Other val)
 -- | Defines an alias for the schema located at @components.schemas.asset_history@ in the specification.
 -- 
