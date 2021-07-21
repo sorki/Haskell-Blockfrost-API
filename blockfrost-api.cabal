@@ -119,7 +119,7 @@ library
       BlockfrostAPI.Types.NutlinkAddressTickerTicker
       BlockfrostAPI.Types.NutlinkTickersTicker
       BlockfrostAPI.Types.Pool
-      BlockfrostAPI.Types.PoolDelegators
+      BlockfrostAPI.Types.PoolDelegator
       BlockfrostAPI.Types.PoolHistory
       BlockfrostAPI.Types.PoolListRetire
       BlockfrostAPI.Types.PoolMetadata
