@@ -31,7 +31,7 @@ import qualified GHC.Types
 import qualified BlockfrostAPI.Common
 import BlockfrostAPI.TypeAlias
 
--- | Defines the object schema located at @components.schemas.account_withdrawal_content.items@ in the specification.
+-- | Defines the object schema located at @components.schemas.account_withdrawal_content@ in the specification.
 -- 
 -- 
 data AccountWithdrawalContent = AccountWithdrawalContent {
@@ -52,9 +52,3 @@ mkAccountWithdrawalContent :: Data.Text.Internal.Text -- ^ 'accountWithdrawalCon
   -> AccountWithdrawalContent
 mkAccountWithdrawalContent accountWithdrawalContentAmount accountWithdrawalContentTxHash = AccountWithdrawalContent{accountWithdrawalContentAmount = accountWithdrawalContentAmount,
                                                                                                                     accountWithdrawalContentTxHash = accountWithdrawalContentTxHash}
--- | Defines an alias for the schema located at @components.schemas.account_withdrawal_content@ in the specification.
--- 
--- 
--- XXX: collision
--- type AccountWithdrawalContent = [AccountWithdrawalContent]
-type AccountWithdrawalContent' = [AccountWithdrawalContent]
