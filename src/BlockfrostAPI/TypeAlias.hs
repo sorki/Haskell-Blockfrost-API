@@ -64,7 +64,13 @@ import {-# SOURCE #-} BlockfrostAPI.Types.TxContentMetadataItem
 import {-# SOURCE #-} BlockfrostAPI.Types.TxContentMir
 import {-# SOURCE #-} BlockfrostAPI.Types.TxContentPoolCert
 import {-# SOURCE #-} BlockfrostAPI.Types.TxContentPoolRetiring
+import {-# SOURCE #-} BlockfrostAPI.Types.TxContentStakeAddress
 
+
+-- | Defines an alias for the schema located at @components.schemas.tx_content_stake_addresses@ in the specification.
+-- 
+-- 
+type TxContentStakeAddresses = [TxContentStakeAddress]
 
 -- | Defines an alias for the schema located at @components.schemas.tx_content_pool_retires@ in the specification.
 -- 
