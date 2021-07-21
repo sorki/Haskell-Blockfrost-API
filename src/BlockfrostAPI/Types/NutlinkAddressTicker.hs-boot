@@ -11,6 +11,3 @@ instance Show NutlinkAddressTickerPayload'Variants
 instance Eq NutlinkAddressTickerPayload'Variants
 instance FromJSON NutlinkAddressTickerPayload'Variants
 instance ToJSON NutlinkAddressTickerPayload'Variants
--- XXX: collision
--- type NutlinkAddressTicker = [NutlinkAddressTicker]
-type NutlinkAddressTicker' = [NutlinkAddressTicker]
