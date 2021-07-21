@@ -31,7 +31,7 @@ import qualified GHC.Types
 import qualified BlockfrostAPI.Common
 import BlockfrostAPI.TypeAlias
 
--- | Defines the object schema located at @components.schemas.account_reward_content.items@ in the specification.
+-- | Defines the object schema located at @components.schemas.account_reward_content@ in the specification.
 -- 
 -- 
 data AccountRewardContent = AccountRewardContent {
@@ -56,9 +56,3 @@ mkAccountRewardContent :: Data.Text.Internal.Text -- ^ 'accountRewardContentAmou
 mkAccountRewardContent accountRewardContentAmount accountRewardContentEpoch accountRewardContentPoolId = AccountRewardContent{accountRewardContentAmount = accountRewardContentAmount,
                                                                                                                               accountRewardContentEpoch = accountRewardContentEpoch,
                                                                                                                               accountRewardContentPoolId = accountRewardContentPoolId}
--- | Defines an alias for the schema located at @components.schemas.account_reward_content@ in the specification.
--- 
--- 
--- XXX: collision
--- type AccountRewardContent = [AccountRewardContent]
-type AccountRewardContent' = [AccountRewardContent]

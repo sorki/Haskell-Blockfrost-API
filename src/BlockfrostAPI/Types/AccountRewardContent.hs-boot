@@ -6,6 +6,3 @@ instance Show AccountRewardContent
 instance Eq AccountRewardContent
 instance FromJSON AccountRewardContent
 instance ToJSON AccountRewardContent
--- XXX: collision
--- type AccountRewardContent = [AccountRewardContent]
-type AccountRewardContent' = [AccountRewardContent]
