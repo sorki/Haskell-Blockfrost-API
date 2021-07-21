@@ -56,8 +56,14 @@ import {-# SOURCE #-} BlockfrostAPI.Types.PoolDelegator
 import {-# SOURCE #-} BlockfrostAPI.Types.PoolHistory
 import {-# SOURCE #-} BlockfrostAPI.Types.PoolRelay
 import {-# SOURCE #-} BlockfrostAPI.Types.PoolRetiring
+import {-# SOURCE #-} BlockfrostAPI.Types.PoolUpdate
 import {-# SOURCE #-} BlockfrostAPI.Types.ShortAsset
 
+
+-- | Defines an alias for the schema located at @components.schemas.pool_updates@ in the specification.
+-- 
+-- 
+type PoolUpdates = [PoolUpdate]
 
 -- | Defines an alias for the schema located at @components.schemas.pool_relays@ in the specification.
 -- 
