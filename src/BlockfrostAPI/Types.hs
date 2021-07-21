@@ -17,7 +17,7 @@ module BlockfrostAPI.Types (
   module BlockfrostAPI.Types.AddressTransactionsContent,
   module BlockfrostAPI.Types.AddressUtxoContent,
   module BlockfrostAPI.Types.Asset,
-  module BlockfrostAPI.Types.AssetAddresses,
+  module BlockfrostAPI.Types.AssetAddress,
   module BlockfrostAPI.Types.AssetHistory,
   module BlockfrostAPI.Types.AssetPolicy,
   module BlockfrostAPI.Types.AssetTransactions,
@@ -71,7 +71,7 @@ import BlockfrostAPI.Types.AddressContentTotal
 import BlockfrostAPI.Types.AddressTransactionsContent
 import BlockfrostAPI.Types.AddressUtxoContent
 import BlockfrostAPI.Types.Asset
-import BlockfrostAPI.Types.AssetAddresses
+import BlockfrostAPI.Types.AssetAddress
 import BlockfrostAPI.Types.AssetHistory
 import BlockfrostAPI.Types.AssetPolicy
 import BlockfrostAPI.Types.AssetTransactions

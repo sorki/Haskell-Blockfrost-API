@@ -102,7 +102,7 @@ library
       BlockfrostAPI.Types.AddressTransactionsContent
       BlockfrostAPI.Types.AddressUtxoContent
       BlockfrostAPI.Types.Asset
-      BlockfrostAPI.Types.AssetAddresses
+      BlockfrostAPI.Types.AssetAddress
       BlockfrostAPI.Types.AssetHistory
       BlockfrostAPI.Types.AssetPolicy
       BlockfrostAPI.Types.AssetTransactions
