@@ -11,6 +11,3 @@ instance Show AssetHistoryAction'
 instance Eq AssetHistoryAction'
 instance FromJSON AssetHistoryAction'
 instance ToJSON AssetHistoryAction'
--- XXX: collision
--- type AssetHistory = [AssetHistory]
-type AssetHistory' = [AssetHistory]

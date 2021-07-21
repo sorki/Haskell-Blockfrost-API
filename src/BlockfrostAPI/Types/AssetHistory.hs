@@ -31,7 +31,7 @@ import qualified GHC.Types
 import qualified BlockfrostAPI.Common
 import BlockfrostAPI.TypeAlias
 
--- | Defines the object schema located at @components.schemas.asset_history.items@ in the specification.
+-- | Defines the object schema located at @components.schemas.asset_history@ in the specification.
 -- 
 -- 
 data AssetHistory = AssetHistory {
@@ -56,7 +56,7 @@ mkAssetHistory :: AssetHistoryAction' -- ^ 'assetHistoryAction'
 mkAssetHistory assetHistoryAction assetHistoryAmount assetHistoryTxHash = AssetHistory{assetHistoryAction = assetHistoryAction,
                                                                                        assetHistoryAmount = assetHistoryAmount,
                                                                                        assetHistoryTxHash = assetHistoryTxHash}
--- | Defines the enum schema located at @components.schemas.asset_history.items.properties.action@ in the specification.
+-- | Defines the enum schema located at @components.schemas.asset_history.properties.action@ in the specification.
 -- 
 -- Action executed upon the asset policy
 data AssetHistoryAction' =
@@ -74,9 +74,3 @@ instance Data.Aeson.Types.FromJSON.FromJSON AssetHistoryAction'
     where parseJSON val = GHC.Base.pure (if | val GHC.Classes.== "minted" -> AssetHistoryAction'EnumMinted
                                             | val GHC.Classes.== "burned" -> AssetHistoryAction'EnumBurned
                                             | GHC.Base.otherwise -> AssetHistoryAction'Other val)
--- | Defines an alias for the schema located at @components.schemas.asset_history@ in the specification.
--- 
--- 
--- XXX: collision
--- type AssetHistory = [AssetHistory]
-type AssetHistory' = [AssetHistory]
