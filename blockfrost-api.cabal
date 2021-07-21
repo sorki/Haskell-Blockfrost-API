@@ -132,7 +132,7 @@ library
       BlockfrostAPI.Types.TxContentMetadataItem
       BlockfrostAPI.Types.TxContentMir
       BlockfrostAPI.Types.TxContentPoolCert
-      BlockfrostAPI.Types.TxContentPoolRetires
+      BlockfrostAPI.Types.TxContentPoolRetiring
       BlockfrostAPI.Types.TxContentStakeAddr
       BlockfrostAPI.Types.TxContentUtxo
       BlockfrostAPI.Types.TxContentWithdrawals

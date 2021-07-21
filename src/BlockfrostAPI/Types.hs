@@ -47,7 +47,7 @@ module BlockfrostAPI.Types (
   module BlockfrostAPI.Types.TxContentMetadataItem,
   module BlockfrostAPI.Types.TxContentMir,
   module BlockfrostAPI.Types.TxContentPoolCert,
-  module BlockfrostAPI.Types.TxContentPoolRetires,
+  module BlockfrostAPI.Types.TxContentPoolRetiring,
   module BlockfrostAPI.Types.TxContentStakeAddr,
   module BlockfrostAPI.Types.TxContentUtxo,
   module BlockfrostAPI.Types.TxContentWithdrawals,
@@ -101,7 +101,7 @@ import BlockfrostAPI.Types.TxContentMetadataCborItem
 import BlockfrostAPI.Types.TxContentMetadataItem
 import BlockfrostAPI.Types.TxContentMir
 import BlockfrostAPI.Types.TxContentPoolCert
-import BlockfrostAPI.Types.TxContentPoolRetires
+import BlockfrostAPI.Types.TxContentPoolRetiring
 import BlockfrostAPI.Types.TxContentStakeAddr
 import BlockfrostAPI.Types.TxContentUtxo
 import BlockfrostAPI.Types.TxContentWithdrawals

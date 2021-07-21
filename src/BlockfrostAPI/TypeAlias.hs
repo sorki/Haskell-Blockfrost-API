@@ -63,7 +63,13 @@ import {-# SOURCE #-} BlockfrostAPI.Types.TxContentMetadataCborItem
 import {-# SOURCE #-} BlockfrostAPI.Types.TxContentMetadataItem
 import {-# SOURCE #-} BlockfrostAPI.Types.TxContentMir
 import {-# SOURCE #-} BlockfrostAPI.Types.TxContentPoolCert
+import {-# SOURCE #-} BlockfrostAPI.Types.TxContentPoolRetiring
 
+
+-- | Defines an alias for the schema located at @components.schemas.tx_content_pool_retires@ in the specification.
+-- 
+-- 
+type TxContentPoolRetires = [TxContentPoolRetiring]
 
 -- | Defines an alias for the schema located at @components.schemas.tx_content_pool_certs@ in the specification.
 -- 
