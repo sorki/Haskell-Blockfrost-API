@@ -6,6 +6,3 @@ instance Show AddressTransactionsContent
 instance Eq AddressTransactionsContent
 instance FromJSON AddressTransactionsContent
 instance ToJSON AddressTransactionsContent
--- XXX: collision
--- type AddressTransactionsContent = [AddressTransactionsContent]
-type AddressTransactionsContent' = [AddressTransactionsContent]

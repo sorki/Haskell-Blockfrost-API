@@ -31,7 +31,7 @@ import qualified GHC.Types
 import qualified BlockfrostAPI.Common
 import BlockfrostAPI.TypeAlias
 
--- | Defines the object schema located at @components.schemas.address_transactions_content.items@ in the specification.
+-- | Defines the object schema located at @components.schemas.address_transactions_content@ in the specification.
 -- 
 -- 
 data AddressTransactionsContent = AddressTransactionsContent {
@@ -56,9 +56,3 @@ mkAddressTransactionsContent :: GHC.Integer.Type.Integer -- ^ 'addressTransactio
 mkAddressTransactionsContent addressTransactionsContentBlockHeight addressTransactionsContentTxHash addressTransactionsContentTxIndex = AddressTransactionsContent{addressTransactionsContentBlockHeight = addressTransactionsContentBlockHeight,
                                                                                                                                                                    addressTransactionsContentTxHash = addressTransactionsContentTxHash,
                                                                                                                                                                    addressTransactionsContentTxIndex = addressTransactionsContentTxIndex}
--- | Defines an alias for the schema located at @components.schemas.address_transactions_content@ in the specification.
--- 
--- 
--- XXX: collision
--- type AddressTransactionsContent = [AddressTransactionsContent]
-type AddressTransactionsContent' = [AddressTransactionsContent]
