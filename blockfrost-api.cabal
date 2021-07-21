@@ -106,7 +106,6 @@ library
       BlockfrostAPI.Types.AssetHistory
       BlockfrostAPI.Types.AssetPolicy
       BlockfrostAPI.Types.AssetTransaction
-      BlockfrostAPI.Types.Assets
       BlockfrostAPI.Types.BlockContent
       BlockfrostAPI.Types.EpochContent
       BlockfrostAPI.Types.EpochParamContent
@@ -126,6 +125,7 @@ library
       BlockfrostAPI.Types.PoolMetadata
       BlockfrostAPI.Types.PoolRelays
       BlockfrostAPI.Types.PoolUpdates
+      BlockfrostAPI.Types.ShortAsset
       BlockfrostAPI.Types.TxContent
       BlockfrostAPI.Types.TxContentDelegations
       BlockfrostAPI.Types.TxContentMetadata

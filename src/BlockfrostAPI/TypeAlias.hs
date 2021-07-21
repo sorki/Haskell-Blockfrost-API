@@ -45,6 +45,7 @@ import {-# SOURCE #-} BlockfrostAPI.Types.AssetPolicy
 import {-# SOURCE #-} BlockfrostAPI.Types.AssetTransaction
 import {-# SOURCE #-} BlockfrostAPI.Types.BlockContent
 import {-# SOURCE #-} BlockfrostAPI.Types.EpochContent
+import {-# SOURCE #-} BlockfrostAPI.Types.ShortAsset
 
 
 -- | Defines an alias for the schema located at @components.schemas.pool_list@ in the specification.
@@ -81,6 +82,11 @@ type BlockContentTxs = [Data.Text.Internal.Text]
 -- 
 -- 
 type BlockContentArray = [BlockContent]
+
+-- | Defines an alias for the schema located at @components.schemas.assets@ in the specification.
+-- 
+-- 
+type Assets = [ShortAsset]
 
 -- | Defines an alias for the schema located at @components.schemas.asset_txs@ in the specification.
 -- 

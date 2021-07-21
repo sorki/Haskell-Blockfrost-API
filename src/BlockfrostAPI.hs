@@ -101,7 +101,6 @@ module BlockfrostAPI (
   module BlockfrostAPI.Types.AssetHistory,
   module BlockfrostAPI.Types.AssetPolicy,
   module BlockfrostAPI.Types.AssetTransaction,
-  module BlockfrostAPI.Types.Assets,
   module BlockfrostAPI.Types.BlockContent,
   module BlockfrostAPI.Types.EpochContent,
   module BlockfrostAPI.Types.EpochParamContent,
@@ -121,6 +120,7 @@ module BlockfrostAPI (
   module BlockfrostAPI.Types.PoolMetadata,
   module BlockfrostAPI.Types.PoolRelays,
   module BlockfrostAPI.Types.PoolUpdates,
+  module BlockfrostAPI.Types.ShortAsset,
   module BlockfrostAPI.Types.TxContent,
   module BlockfrostAPI.Types.TxContentDelegations,
   module BlockfrostAPI.Types.TxContentMetadata,
@@ -238,7 +238,6 @@ import BlockfrostAPI.Types.AssetAddress
 import BlockfrostAPI.Types.AssetHistory
 import BlockfrostAPI.Types.AssetPolicy
 import BlockfrostAPI.Types.AssetTransaction
-import BlockfrostAPI.Types.Assets
 import BlockfrostAPI.Types.BlockContent
 import BlockfrostAPI.Types.EpochContent
 import BlockfrostAPI.Types.EpochParamContent
@@ -258,6 +257,7 @@ import BlockfrostAPI.Types.PoolListRetire
 import BlockfrostAPI.Types.PoolMetadata
 import BlockfrostAPI.Types.PoolRelays
 import BlockfrostAPI.Types.PoolUpdates
+import BlockfrostAPI.Types.ShortAsset
 import BlockfrostAPI.Types.TxContent
 import BlockfrostAPI.Types.TxContentDelegations
 import BlockfrostAPI.Types.TxContentMetadata
