@@ -50,7 +50,7 @@ module BlockfrostAPI.Types (
   module BlockfrostAPI.Types.TxContentPoolRetiring,
   module BlockfrostAPI.Types.TxContentStakeAddress,
   module BlockfrostAPI.Types.TxContentUtxo,
-  module BlockfrostAPI.Types.TxContentWithdrawals,
+  module BlockfrostAPI.Types.TxContentWithdrawal,
   module BlockfrostAPI.Types.TxMetadataLabelCbor,
   module BlockfrostAPI.Types.TxMetadataLabelJson,
   module BlockfrostAPI.Types.TxMetadataLabels,
@@ -104,7 +104,7 @@ import BlockfrostAPI.Types.TxContentPoolCert
 import BlockfrostAPI.Types.TxContentPoolRetiring
 import BlockfrostAPI.Types.TxContentStakeAddress
 import BlockfrostAPI.Types.TxContentUtxo
-import BlockfrostAPI.Types.TxContentWithdrawals
+import BlockfrostAPI.Types.TxContentWithdrawal
 import BlockfrostAPI.Types.TxMetadataLabelCbor
 import BlockfrostAPI.Types.TxMetadataLabelJson
 import BlockfrostAPI.Types.TxMetadataLabels

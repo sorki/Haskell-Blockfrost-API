@@ -65,7 +65,13 @@ import {-# SOURCE #-} BlockfrostAPI.Types.TxContentMir
 import {-# SOURCE #-} BlockfrostAPI.Types.TxContentPoolCert
 import {-# SOURCE #-} BlockfrostAPI.Types.TxContentPoolRetiring
 import {-# SOURCE #-} BlockfrostAPI.Types.TxContentStakeAddress
+import {-# SOURCE #-} BlockfrostAPI.Types.TxContentWithdrawal
 
+
+-- | Defines an alias for the schema located at @components.schemas.tx_content_withdrawals@ in the specification.
+-- 
+-- 
+type TxContentWithdrawals = [TxContentWithdrawal]
 
 -- | Defines an alias for the schema located at @components.schemas.tx_content_stake_addresses@ in the specification.
 -- 

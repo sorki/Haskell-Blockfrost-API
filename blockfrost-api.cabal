@@ -135,7 +135,7 @@ library
       BlockfrostAPI.Types.TxContentPoolRetiring
       BlockfrostAPI.Types.TxContentStakeAddress
       BlockfrostAPI.Types.TxContentUtxo
-      BlockfrostAPI.Types.TxContentWithdrawals
+      BlockfrostAPI.Types.TxContentWithdrawal
       BlockfrostAPI.Types.TxMetadataLabelCbor
       BlockfrostAPI.Types.TxMetadataLabelJson
       BlockfrostAPI.Types.TxMetadataLabels
