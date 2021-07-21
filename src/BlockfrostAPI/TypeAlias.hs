@@ -58,7 +58,13 @@ import {-# SOURCE #-} BlockfrostAPI.Types.PoolRelay
 import {-# SOURCE #-} BlockfrostAPI.Types.PoolRetiring
 import {-# SOURCE #-} BlockfrostAPI.Types.PoolUpdate
 import {-# SOURCE #-} BlockfrostAPI.Types.ShortAsset
+import {-# SOURCE #-} BlockfrostAPI.Types.TxContentDelegation
 
+
+-- | Defines an alias for the schema located at @components.schemas.tx_content_delegations@ in the specification.
+-- 
+-- 
+type TxContentDelegations = [TxContentDelegation]
 
 -- | Defines an alias for the schema located at @components.schemas.pool_updates@ in the specification.
 -- 

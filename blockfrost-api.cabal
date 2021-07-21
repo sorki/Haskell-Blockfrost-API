@@ -127,7 +127,7 @@ library
       BlockfrostAPI.Types.PoolUpdate
       BlockfrostAPI.Types.ShortAsset
       BlockfrostAPI.Types.TxContent
-      BlockfrostAPI.Types.TxContentDelegations
+      BlockfrostAPI.Types.TxContentDelegation
       BlockfrostAPI.Types.TxContentMetadata
       BlockfrostAPI.Types.TxContentMetadataCbor
       BlockfrostAPI.Types.TxContentMirs
