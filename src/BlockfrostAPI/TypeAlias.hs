@@ -49,6 +49,7 @@ import {-# SOURCE #-} BlockfrostAPI.Types.EpochStakeContent
 import {-# SOURCE #-} BlockfrostAPI.Types.EpochStakePoolContent
 import {-# SOURCE #-} BlockfrostAPI.Types.Metric
 import {-# SOURCE #-} BlockfrostAPI.Types.MetricsEndpoint
+import {-# SOURCE #-} BlockfrostAPI.Types.NutlinkAddressTicker
 import {-# SOURCE #-} BlockfrostAPI.Types.NutlinkAddressTickerTicker
 import {-# SOURCE #-} BlockfrostAPI.Types.ShortAsset
 
@@ -62,6 +63,11 @@ type PoolList = [Data.Text.Internal.Text]
 -- 
 -- 
 type PoolBlocks = [Data.Text.Internal.Text]
+
+-- | Defines an alias for the schema located at @components.schemas.nutlink_address_tickers@ in the specification.
+-- 
+-- 
+type NutlinkAddressTickers = [NutlinkAddressTicker]
 
 -- | Defines an alias for the schema located at @components.schemas.nutlink_address_ticker_tickers@ in the specification.
 -- 

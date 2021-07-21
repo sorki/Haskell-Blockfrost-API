@@ -110,8 +110,8 @@ module BlockfrostAPI (
   module BlockfrostAPI.Types.Metric,
   module BlockfrostAPI.Types.MetricsEndpoint,
   module BlockfrostAPI.Types.NutlinkAddress,
+  module BlockfrostAPI.Types.NutlinkAddressTicker,
   module BlockfrostAPI.Types.NutlinkAddressTickerTicker,
-  module BlockfrostAPI.Types.NutlinkAddressTickers,
   module BlockfrostAPI.Types.NutlinkTickersTicker,
   module BlockfrostAPI.Types.Pool,
   module BlockfrostAPI.Types.PoolDelegators,
@@ -247,8 +247,8 @@ import BlockfrostAPI.Types.GenesisContent
 import BlockfrostAPI.Types.Metric
 import BlockfrostAPI.Types.MetricsEndpoint
 import BlockfrostAPI.Types.NutlinkAddress
+import BlockfrostAPI.Types.NutlinkAddressTicker
 import BlockfrostAPI.Types.NutlinkAddressTickerTicker
-import BlockfrostAPI.Types.NutlinkAddressTickers
 import BlockfrostAPI.Types.NutlinkTickersTicker
 import BlockfrostAPI.Types.Pool
 import BlockfrostAPI.Types.PoolDelegators
