@@ -11,6 +11,3 @@ instance Show AccountRegistrationContentAction'
 instance Eq AccountRegistrationContentAction'
 instance FromJSON AccountRegistrationContentAction'
 instance ToJSON AccountRegistrationContentAction'
--- XXX: collision
--- type AccountRegistrationContent = [AccountRegistrationContent]
-type AccountRegistrationContent' = [AccountRegistrationContent]

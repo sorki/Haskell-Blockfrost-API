@@ -31,7 +31,7 @@ import qualified GHC.Types
 import qualified BlockfrostAPI.Common
 import BlockfrostAPI.TypeAlias
 
--- | Defines the object schema located at @components.schemas.account_registration_content.items@ in the specification.
+-- | Defines the object schema located at @components.schemas.account_registration_content@ in the specification.
 -- 
 -- 
 data AccountRegistrationContent = AccountRegistrationContent {
@@ -52,7 +52,7 @@ mkAccountRegistrationContent :: AccountRegistrationContentAction' -- ^ 'accountR
   -> AccountRegistrationContent
 mkAccountRegistrationContent accountRegistrationContentAction accountRegistrationContentTxHash = AccountRegistrationContent{accountRegistrationContentAction = accountRegistrationContentAction,
                                                                                                                             accountRegistrationContentTxHash = accountRegistrationContentTxHash}
--- | Defines the enum schema located at @components.schemas.account_registration_content.items.properties.action@ in the specification.
+-- | Defines the enum schema located at @components.schemas.account_registration_content.properties.action@ in the specification.
 -- 
 -- Action in the certificate
 data AccountRegistrationContentAction' =
@@ -70,9 +70,3 @@ instance Data.Aeson.Types.FromJSON.FromJSON AccountRegistrationContentAction'
     where parseJSON val = GHC.Base.pure (if | val GHC.Classes.== "registered" -> AccountRegistrationContentAction'EnumRegistered
                                             | val GHC.Classes.== "deregistered" -> AccountRegistrationContentAction'EnumDeregistered
                                             | GHC.Base.otherwise -> AccountRegistrationContentAction'Other val)
--- | Defines an alias for the schema located at @components.schemas.account_registration_content@ in the specification.
--- 
--- 
--- XXX: collision
--- type AccountRegistrationContent = [AccountRegistrationContent]
-type AccountRegistrationContent' = [AccountRegistrationContent]
