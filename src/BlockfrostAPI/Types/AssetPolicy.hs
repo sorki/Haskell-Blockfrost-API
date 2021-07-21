@@ -31,7 +31,7 @@ import qualified GHC.Types
 import qualified BlockfrostAPI.Common
 import BlockfrostAPI.TypeAlias
 
--- | Defines the object schema located at @components.schemas.asset_policy.items@ in the specification.
+-- | Defines the object schema located at @components.schemas.asset_policy@ in the specification.
 -- 
 -- 
 data AssetPolicy = AssetPolicy {
@@ -52,9 +52,3 @@ mkAssetPolicy :: Data.Text.Internal.Text -- ^ 'assetPolicyAsset'
   -> AssetPolicy
 mkAssetPolicy assetPolicyAsset assetPolicyQuantity = AssetPolicy{assetPolicyAsset = assetPolicyAsset,
                                                                  assetPolicyQuantity = assetPolicyQuantity}
--- | Defines an alias for the schema located at @components.schemas.asset_policy@ in the specification.
--- 
--- 
--- XXX: collision
--- type AssetPolicy = [AssetPolicy]
-type AssetPolicy' = [AssetPolicy]
