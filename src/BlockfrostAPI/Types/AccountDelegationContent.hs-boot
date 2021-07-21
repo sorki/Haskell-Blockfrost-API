@@ -6,6 +6,3 @@ instance Show AccountDelegationContent
 instance Eq AccountDelegationContent
 instance FromJSON AccountDelegationContent
 instance ToJSON AccountDelegationContent
--- XXX: collision
--- type AccountDelegationContent = [AccountDelegationContent]
-type AccountDelegationContent' = [AccountDelegationContent]
