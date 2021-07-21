@@ -1,0 +1,13 @@
+module BlockfrostAPI.Types.TxMetadataLabelJsonItem where
+import Data.Aeson
+import qualified Data.Aeson as Data.Aeson.Types.Internal
+data TxMetadataLabelJsonItem
+instance Show TxMetadataLabelJsonItem
+instance Eq TxMetadataLabelJsonItem
+instance FromJSON TxMetadataLabelJsonItem
+instance ToJSON TxMetadataLabelJsonItem
+data TxMetadataLabelJsonItemJsonMetadata'Variants
+instance Show TxMetadataLabelJsonItemJsonMetadata'Variants
+instance Eq TxMetadataLabelJsonItemJsonMetadata'Variants
+instance FromJSON TxMetadataLabelJsonItemJsonMetadata'Variants
+instance ToJSON TxMetadataLabelJsonItemJsonMetadata'Variants

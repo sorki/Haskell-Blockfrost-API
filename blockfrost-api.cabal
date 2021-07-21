@@ -138,7 +138,7 @@ library
       BlockfrostAPI.Types.TxContentWithdrawal
       BlockfrostAPI.Types.TxMetadataLabel
       BlockfrostAPI.Types.TxMetadataLabelCborItem
-      BlockfrostAPI.Types.TxMetadataLabelJson
+      BlockfrostAPI.Types.TxMetadataLabelJsonItem
       BlockfrostAPI.Configuration
       BlockfrostAPI.SecuritySchemes
       BlockfrostAPI.Common

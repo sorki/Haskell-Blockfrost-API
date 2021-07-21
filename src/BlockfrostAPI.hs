@@ -133,7 +133,7 @@ module BlockfrostAPI (
   module BlockfrostAPI.Types.TxContentWithdrawal,
   module BlockfrostAPI.Types.TxMetadataLabel,
   module BlockfrostAPI.Types.TxMetadataLabelCborItem,
-  module BlockfrostAPI.Types.TxMetadataLabelJson,
+  module BlockfrostAPI.Types.TxMetadataLabelJsonItem,
   module BlockfrostAPI.Configuration,
   module BlockfrostAPI.SecuritySchemes,
   module BlockfrostAPI.Common,
@@ -270,7 +270,7 @@ import BlockfrostAPI.Types.TxContentUtxo
 import BlockfrostAPI.Types.TxContentWithdrawal
 import BlockfrostAPI.Types.TxMetadataLabel
 import BlockfrostAPI.Types.TxMetadataLabelCborItem
-import BlockfrostAPI.Types.TxMetadataLabelJson
+import BlockfrostAPI.Types.TxMetadataLabelJsonItem
 import BlockfrostAPI.Configuration
 import BlockfrostAPI.SecuritySchemes
 import BlockfrostAPI.Common

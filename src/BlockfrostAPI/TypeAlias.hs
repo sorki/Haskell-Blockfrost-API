@@ -68,12 +68,18 @@ import {-# SOURCE #-} BlockfrostAPI.Types.TxContentStakeAddress
 import {-# SOURCE #-} BlockfrostAPI.Types.TxContentWithdrawal
 import {-# SOURCE #-} BlockfrostAPI.Types.TxMetadataLabel
 import {-# SOURCE #-} BlockfrostAPI.Types.TxMetadataLabelCborItem
+import {-# SOURCE #-} BlockfrostAPI.Types.TxMetadataLabelJsonItem
 
 
 -- | Defines an alias for the schema located at @components.schemas.tx_metadata_labels@ in the specification.
 -- 
 -- 
 type TxMetadataLabels = [TxMetadataLabel]
+
+-- | Defines an alias for the schema located at @components.schemas.tx_metadata_label_json@ in the specification.
+-- 
+-- 
+type TxMetadataLabelJson = [TxMetadataLabelJsonItem]
 
 -- | Defines an alias for the schema located at @components.schemas.tx_metadata_label_cbor@ in the specification.
 -- 

@@ -53,7 +53,7 @@ module BlockfrostAPI.Types (
   module BlockfrostAPI.Types.TxContentWithdrawal,
   module BlockfrostAPI.Types.TxMetadataLabel,
   module BlockfrostAPI.Types.TxMetadataLabelCborItem,
-  module BlockfrostAPI.Types.TxMetadataLabelJson,
+  module BlockfrostAPI.Types.TxMetadataLabelJsonItem,
   ) where
 
 import BlockfrostAPI.TypeAlias
@@ -107,4 +107,4 @@ import BlockfrostAPI.Types.TxContentUtxo
 import BlockfrostAPI.Types.TxContentWithdrawal
 import BlockfrostAPI.Types.TxMetadataLabel
 import BlockfrostAPI.Types.TxMetadataLabelCborItem
-import BlockfrostAPI.Types.TxMetadataLabelJson
+import BlockfrostAPI.Types.TxMetadataLabelJsonItem
