@@ -42,6 +42,7 @@ import {-# SOURCE #-} BlockfrostAPI.Types.AddressUtxoContent
 import {-# SOURCE #-} BlockfrostAPI.Types.AssetAddress
 import {-# SOURCE #-} BlockfrostAPI.Types.AssetHistory
 import {-# SOURCE #-} BlockfrostAPI.Types.AssetPolicy
+import {-# SOURCE #-} BlockfrostAPI.Types.AssetTransaction
 import {-# SOURCE #-} BlockfrostAPI.Types.BlockContent
 import {-# SOURCE #-} BlockfrostAPI.Types.EpochContent
 
@@ -85,6 +86,11 @@ type BlockContentArray = [BlockContent]
 -- 
 -- 
 type AssetTxs = [Data.Text.Internal.Text]
+
+-- | Defines an alias for the schema located at @components.schemas.asset_transactions@ in the specification.
+-- 
+-- 
+type AssetTransactions = [AssetTransaction]
 
 -- | Defines an alias for the schema located at @components.schemas.asset_policies@ in the specification.
 -- 

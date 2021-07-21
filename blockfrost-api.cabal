@@ -105,7 +105,7 @@ library
       BlockfrostAPI.Types.AssetAddress
       BlockfrostAPI.Types.AssetHistory
       BlockfrostAPI.Types.AssetPolicy
-      BlockfrostAPI.Types.AssetTransactions
+      BlockfrostAPI.Types.AssetTransaction
       BlockfrostAPI.Types.Assets
       BlockfrostAPI.Types.BlockContent
       BlockfrostAPI.Types.EpochContent

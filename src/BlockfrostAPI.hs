@@ -100,7 +100,7 @@ module BlockfrostAPI (
   module BlockfrostAPI.Types.AssetAddress,
   module BlockfrostAPI.Types.AssetHistory,
   module BlockfrostAPI.Types.AssetPolicy,
-  module BlockfrostAPI.Types.AssetTransactions,
+  module BlockfrostAPI.Types.AssetTransaction,
   module BlockfrostAPI.Types.Assets,
   module BlockfrostAPI.Types.BlockContent,
   module BlockfrostAPI.Types.EpochContent,
@@ -237,7 +237,7 @@ import BlockfrostAPI.Types.Asset
 import BlockfrostAPI.Types.AssetAddress
 import BlockfrostAPI.Types.AssetHistory
 import BlockfrostAPI.Types.AssetPolicy
-import BlockfrostAPI.Types.AssetTransactions
+import BlockfrostAPI.Types.AssetTransaction
 import BlockfrostAPI.Types.Assets
 import BlockfrostAPI.Types.BlockContent
 import BlockfrostAPI.Types.EpochContent
