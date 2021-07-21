@@ -59,8 +59,14 @@ import {-# SOURCE #-} BlockfrostAPI.Types.PoolRetiring
 import {-# SOURCE #-} BlockfrostAPI.Types.PoolUpdate
 import {-# SOURCE #-} BlockfrostAPI.Types.ShortAsset
 import {-# SOURCE #-} BlockfrostAPI.Types.TxContentDelegation
+import {-# SOURCE #-} BlockfrostAPI.Types.TxContentMetadataCborItem
 import {-# SOURCE #-} BlockfrostAPI.Types.TxContentMetadataItem
 
+
+-- | Defines an alias for the schema located at @components.schemas.tx_content_metadata_cbor@ in the specification.
+-- 
+-- 
+type TxContentMetadataCbor = [TxContentMetadataCborItem]
 
 -- | Defines an alias for the schema located at @components.schemas.tx_content_metadata@ in the specification.
 -- 

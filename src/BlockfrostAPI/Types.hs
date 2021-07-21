@@ -43,7 +43,7 @@ module BlockfrostAPI.Types (
   module BlockfrostAPI.Types.ShortAsset,
   module BlockfrostAPI.Types.TxContent,
   module BlockfrostAPI.Types.TxContentDelegation,
-  module BlockfrostAPI.Types.TxContentMetadataCbor,
+  module BlockfrostAPI.Types.TxContentMetadataCborItem,
   module BlockfrostAPI.Types.TxContentMetadataItem,
   module BlockfrostAPI.Types.TxContentMirs,
   module BlockfrostAPI.Types.TxContentPoolCerts,
@@ -97,7 +97,7 @@ import BlockfrostAPI.Types.PoolUpdate
 import BlockfrostAPI.Types.ShortAsset
 import BlockfrostAPI.Types.TxContent
 import BlockfrostAPI.Types.TxContentDelegation
-import BlockfrostAPI.Types.TxContentMetadataCbor
+import BlockfrostAPI.Types.TxContentMetadataCborItem
 import BlockfrostAPI.Types.TxContentMetadataItem
 import BlockfrostAPI.Types.TxContentMirs
 import BlockfrostAPI.Types.TxContentPoolCerts

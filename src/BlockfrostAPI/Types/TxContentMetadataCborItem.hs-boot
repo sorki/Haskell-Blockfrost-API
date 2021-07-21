@@ -1,0 +1,8 @@
+module BlockfrostAPI.Types.TxContentMetadataCborItem where
+import Data.Aeson
+import qualified Data.Aeson as Data.Aeson.Types.Internal
+data TxContentMetadataCborItem
+instance Show TxContentMetadataCborItem
+instance Eq TxContentMetadataCborItem
+instance FromJSON TxContentMetadataCborItem
+instance ToJSON TxContentMetadataCborItem
