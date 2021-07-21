@@ -31,7 +31,7 @@ import qualified GHC.Types
 import qualified BlockfrostAPI.Common
 import BlockfrostAPI.TypeAlias
 
--- | Defines the object schema located at @components.schemas.account_mir_content.items@ in the specification.
+-- | Defines the object schema located at @components.schemas.account_mir_content@ in the specification.
 -- 
 -- 
 data AccountMirContent = AccountMirContent {
@@ -52,9 +52,3 @@ mkAccountMirContent :: Data.Text.Internal.Text -- ^ 'accountMirContentAmount'
   -> AccountMirContent
 mkAccountMirContent accountMirContentAmount accountMirContentTxHash = AccountMirContent{accountMirContentAmount = accountMirContentAmount,
                                                                                         accountMirContentTxHash = accountMirContentTxHash}
--- | Defines an alias for the schema located at @components.schemas.account_mir_content@ in the specification.
--- 
--- 
--- XXX: collision
--- type AccountMirContent = [AccountMirContent]
-type AccountMirContent' = [AccountMirContent]

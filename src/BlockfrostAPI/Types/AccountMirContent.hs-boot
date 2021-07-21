@@ -6,6 +6,3 @@ instance Show AccountMirContent
 instance Eq AccountMirContent
 instance FromJSON AccountMirContent
 instance ToJSON AccountMirContent
--- XXX: collision
--- type AccountMirContent = [AccountMirContent]
-type AccountMirContent' = [AccountMirContent]
