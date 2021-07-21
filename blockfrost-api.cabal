@@ -130,7 +130,7 @@ library
       BlockfrostAPI.Types.TxContentDelegation
       BlockfrostAPI.Types.TxContentMetadataCborItem
       BlockfrostAPI.Types.TxContentMetadataItem
-      BlockfrostAPI.Types.TxContentMirs
+      BlockfrostAPI.Types.TxContentMir
       BlockfrostAPI.Types.TxContentPoolCerts
       BlockfrostAPI.Types.TxContentPoolRetires
       BlockfrostAPI.Types.TxContentStakeAddr

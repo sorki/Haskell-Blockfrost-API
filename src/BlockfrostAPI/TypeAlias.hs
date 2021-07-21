@@ -61,7 +61,13 @@ import {-# SOURCE #-} BlockfrostAPI.Types.ShortAsset
 import {-# SOURCE #-} BlockfrostAPI.Types.TxContentDelegation
 import {-# SOURCE #-} BlockfrostAPI.Types.TxContentMetadataCborItem
 import {-# SOURCE #-} BlockfrostAPI.Types.TxContentMetadataItem
+import {-# SOURCE #-} BlockfrostAPI.Types.TxContentMir
 
+
+-- | Defines an alias for the schema located at @components.schemas.tx_content_mirs@ in the specification.
+-- 
+-- 
+type TxContentMirs = [TxContentMir]
 
 -- | Defines an alias for the schema located at @components.schemas.tx_content_metadata_cbor@ in the specification.
 -- 
