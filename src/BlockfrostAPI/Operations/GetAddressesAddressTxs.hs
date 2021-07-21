@@ -74,7 +74,7 @@ data GetAddressesAddressTxsParameters = GetAddressesAddressTxsParameters {
   getAddressesAddressTxsParametersPathAddress :: Data.Text.Internal.Text
   -- | queryCount: Represents the parameter named \'count\'
   -- 
-  -- The numbers of pools per page.
+  -- The number of transactions per page.
   -- 
   -- Constraints:
   -- 
