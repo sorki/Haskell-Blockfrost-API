@@ -83,7 +83,7 @@ module BlockfrostAPI (
   module BlockfrostAPI.Operations.GetTxsHashWithdrawals,
   module BlockfrostAPI.Types,
   module BlockfrostAPI.TypeAlias,
-  module BlockfrostAPI.Types.AccountAddressesAssets,
+  module BlockfrostAPI.Types.AccountAddressesAsset,
   module BlockfrostAPI.Types.AccountAddressesContent,
   module BlockfrostAPI.Types.AccountContent,
   module BlockfrostAPI.Types.AccountDelegationContent,
@@ -220,7 +220,7 @@ import BlockfrostAPI.Operations.GetTxsHashUtxos
 import BlockfrostAPI.Operations.GetTxsHashWithdrawals
 import BlockfrostAPI.Types
 import BlockfrostAPI.TypeAlias
-import BlockfrostAPI.Types.AccountAddressesAssets
+import BlockfrostAPI.Types.AccountAddressesAsset
 import BlockfrostAPI.Types.AccountAddressesContent
 import BlockfrostAPI.Types.AccountContent
 import BlockfrostAPI.Types.AccountDelegationContent
