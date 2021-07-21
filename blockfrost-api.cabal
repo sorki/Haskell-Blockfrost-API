@@ -122,7 +122,7 @@ library
       BlockfrostAPI.Types.PoolDelegator
       BlockfrostAPI.Types.PoolHistory
       BlockfrostAPI.Types.PoolMetadata
-      BlockfrostAPI.Types.PoolRelays
+      BlockfrostAPI.Types.PoolRelay
       BlockfrostAPI.Types.PoolRetiring
       BlockfrostAPI.Types.PoolUpdates
       BlockfrostAPI.Types.ShortAsset

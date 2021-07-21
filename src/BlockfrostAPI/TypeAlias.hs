@@ -54,9 +54,15 @@ import {-# SOURCE #-} BlockfrostAPI.Types.NutlinkAddressTickerTicker
 import {-# SOURCE #-} BlockfrostAPI.Types.NutlinkTickersTicker
 import {-# SOURCE #-} BlockfrostAPI.Types.PoolDelegator
 import {-# SOURCE #-} BlockfrostAPI.Types.PoolHistory
+import {-# SOURCE #-} BlockfrostAPI.Types.PoolRelay
 import {-# SOURCE #-} BlockfrostAPI.Types.PoolRetiring
 import {-# SOURCE #-} BlockfrostAPI.Types.ShortAsset
 
+
+-- | Defines an alias for the schema located at @components.schemas.pool_relays@ in the specification.
+-- 
+-- 
+type PoolRelays = [PoolRelay]
 
 -- | Defines an alias for the schema located at @components.schemas.pool_list_retire@ in the specification.
 -- 
