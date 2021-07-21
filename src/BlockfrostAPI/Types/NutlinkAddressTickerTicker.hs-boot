@@ -1,0 +1,13 @@
+module BlockfrostAPI.Types.NutlinkAddressTickerTicker where
+import Data.Aeson
+import qualified Data.Aeson as Data.Aeson.Types.Internal
+data NutlinkAddressTickerTicker
+instance Show NutlinkAddressTickerTicker
+instance Eq NutlinkAddressTickerTicker
+instance FromJSON NutlinkAddressTickerTicker
+instance ToJSON NutlinkAddressTickerTicker
+data NutlinkAddressTickerTickerPayload'Variants
+instance Show NutlinkAddressTickerTickerPayload'Variants
+instance Eq NutlinkAddressTickerTickerPayload'Variants
+instance FromJSON NutlinkAddressTickerTickerPayload'Variants
+instance ToJSON NutlinkAddressTickerTickerPayload'Variants

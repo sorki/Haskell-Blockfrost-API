@@ -115,7 +115,7 @@ library
       BlockfrostAPI.Types.Metric
       BlockfrostAPI.Types.MetricsEndpoint
       BlockfrostAPI.Types.NutlinkAddress
-      BlockfrostAPI.Types.NutlinkAddressTicker
+      BlockfrostAPI.Types.NutlinkAddressTickerTicker
       BlockfrostAPI.Types.NutlinkAddressTickers
       BlockfrostAPI.Types.NutlinkTickersTicker
       BlockfrostAPI.Types.Pool
