@@ -31,7 +31,7 @@ import qualified GHC.Types
 import qualified BlockfrostAPI.Common
 import BlockfrostAPI.TypeAlias
 
--- | Defines the object schema located at @components.schemas.address_utxo_content.items@ in the specification.
+-- | Defines the object schema located at @components.schemas.address_utxo_content@ in the specification.
 -- 
 -- 
 data AddressUtxoContent = AddressUtxoContent {
@@ -64,7 +64,7 @@ mkAddressUtxoContent addressUtxoContentAmount addressUtxoContentBlock addressUtx
                                                                                                                                                                             addressUtxoContentOutputIndex = addressUtxoContentOutputIndex,
                                                                                                                                                                             addressUtxoContentTxHash = addressUtxoContentTxHash,
                                                                                                                                                                             addressUtxoContentTxIndex = addressUtxoContentTxIndex}
--- | Defines the object schema located at @components.schemas.address_utxo_content.items.properties.amount.items@ in the specification.
+-- | Defines the object schema located at @components.schemas.address_utxo_content.properties.amount.items@ in the specification.
 -- 
 -- The sum of all the UTXO per asset
 data AddressUtxoContentAmount' = AddressUtxoContentAmount' {
@@ -85,9 +85,3 @@ mkAddressUtxoContentAmount' :: Data.Text.Internal.Text -- ^ 'addressUtxoContentA
   -> AddressUtxoContentAmount'
 mkAddressUtxoContentAmount' addressUtxoContentAmount'Quantity addressUtxoContentAmount'Unit = AddressUtxoContentAmount'{addressUtxoContentAmount'Quantity = addressUtxoContentAmount'Quantity,
                                                                                                                         addressUtxoContentAmount'Unit = addressUtxoContentAmount'Unit}
--- | Defines an alias for the schema located at @components.schemas.address_utxo_content@ in the specification.
--- 
--- 
--- XXX: collision
--- type AddressUtxoContent = [AddressUtxoContent]
-type AddressUtxoContent' = [AddressUtxoContent]

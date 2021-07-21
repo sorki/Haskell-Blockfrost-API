@@ -11,6 +11,3 @@ instance Show AddressUtxoContentAmount'
 instance Eq AddressUtxoContentAmount'
 instance FromJSON AddressUtxoContentAmount'
 instance ToJSON AddressUtxoContentAmount'
--- XXX: collision
--- type AddressUtxoContent = [AddressUtxoContent]
-type AddressUtxoContent' = [AddressUtxoContent]
