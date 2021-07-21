@@ -31,7 +31,7 @@ import qualified GHC.Types
 import qualified BlockfrostAPI.Common
 import BlockfrostAPI.TypeAlias
 
--- | Defines the object schema located at @components.schemas.epoch_stake_content.items@ in the specification.
+-- | Defines the object schema located at @components.schemas.epoch_stake_content@ in the specification.
 -- 
 -- 
 data EpochStakeContent = EpochStakeContent {
@@ -56,9 +56,3 @@ mkEpochStakeContent :: Data.Text.Internal.Text -- ^ 'epochStakeContentAmount'
 mkEpochStakeContent epochStakeContentAmount epochStakeContentPoolId epochStakeContentStakeAddress = EpochStakeContent{epochStakeContentAmount = epochStakeContentAmount,
                                                                                                                       epochStakeContentPoolId = epochStakeContentPoolId,
                                                                                                                       epochStakeContentStakeAddress = epochStakeContentStakeAddress}
--- | Defines an alias for the schema located at @components.schemas.epoch_stake_content@ in the specification.
--- 
--- 
--- XXX: collision
--- type EpochStakeContent = [EpochStakeContent]
-type EpochStakeContent' = [EpochStakeContent]

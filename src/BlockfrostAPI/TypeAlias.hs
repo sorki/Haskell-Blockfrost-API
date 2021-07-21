@@ -45,6 +45,7 @@ import {-# SOURCE #-} BlockfrostAPI.Types.AssetPolicy
 import {-# SOURCE #-} BlockfrostAPI.Types.AssetTransaction
 import {-# SOURCE #-} BlockfrostAPI.Types.BlockContent
 import {-# SOURCE #-} BlockfrostAPI.Types.EpochContent
+import {-# SOURCE #-} BlockfrostAPI.Types.EpochStakeContent
 import {-# SOURCE #-} BlockfrostAPI.Types.ShortAsset
 
 
@@ -57,6 +58,11 @@ type PoolList = [Data.Text.Internal.Text]
 -- 
 -- 
 type PoolBlocks = [Data.Text.Internal.Text]
+
+-- | Defines an alias for the schema located at @components.schemas.epoch_stake_contents@ in the specification.
+-- 
+-- 
+type EpochStakeContents = [EpochStakeContent]
 
 -- | Defines an alias for the schema located at @components.schemas.epoch_content_array@ in the specification.
 -- 

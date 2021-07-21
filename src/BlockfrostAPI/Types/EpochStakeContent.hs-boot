@@ -6,6 +6,3 @@ instance Show EpochStakeContent
 instance Eq EpochStakeContent
 instance FromJSON EpochStakeContent
 instance ToJSON EpochStakeContent
--- XXX: collision
--- type EpochStakeContent = [EpochStakeContent]
-type EpochStakeContent' = [EpochStakeContent]
