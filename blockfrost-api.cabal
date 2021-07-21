@@ -113,7 +113,7 @@ library
       BlockfrostAPI.Types.EpochStakePoolContent
       BlockfrostAPI.Types.GenesisContent
       BlockfrostAPI.Types.Metric
-      BlockfrostAPI.Types.MetricsEndpoints
+      BlockfrostAPI.Types.MetricsEndpoint
       BlockfrostAPI.Types.NutlinkAddress
       BlockfrostAPI.Types.NutlinkAddressTicker
       BlockfrostAPI.Types.NutlinkAddressTickers
