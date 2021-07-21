@@ -66,7 +66,13 @@ import {-# SOURCE #-} BlockfrostAPI.Types.TxContentPoolCert
 import {-# SOURCE #-} BlockfrostAPI.Types.TxContentPoolRetiring
 import {-# SOURCE #-} BlockfrostAPI.Types.TxContentStakeAddress
 import {-# SOURCE #-} BlockfrostAPI.Types.TxContentWithdrawal
+import {-# SOURCE #-} BlockfrostAPI.Types.TxMetadataLabel
 
+
+-- | Defines an alias for the schema located at @components.schemas.tx_metadata_labels@ in the specification.
+-- 
+-- 
+type TxMetadataLabels = [TxMetadataLabel]
 
 -- | Defines an alias for the schema located at @components.schemas.tx_content_withdrawals@ in the specification.
 -- 
