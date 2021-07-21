@@ -31,7 +31,7 @@ import qualified GHC.Types
 import qualified BlockfrostAPI.Common
 import BlockfrostAPI.TypeAlias
 
--- | Defines the object schema located at @components.schemas.pool_history.items@ in the specification.
+-- | Defines the object schema located at @components.schemas.pool_history@ in the specification.
 -- 
 -- 
 data PoolHistory = PoolHistory {
@@ -72,9 +72,3 @@ mkPoolHistory poolHistoryActiveSize poolHistoryActiveStake poolHistoryBlocks poo
                                                                                                                                                                           poolHistoryEpoch = poolHistoryEpoch,
                                                                                                                                                                           poolHistoryFees = poolHistoryFees,
                                                                                                                                                                           poolHistoryRewards = poolHistoryRewards}
--- | Defines an alias for the schema located at @components.schemas.pool_history@ in the specification.
--- 
--- 
--- XXX: collision
--- type PoolHistory = [PoolHistory]
-type PoolHistory' = [PoolHistory]

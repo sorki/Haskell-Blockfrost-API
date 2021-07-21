@@ -53,6 +53,7 @@ import {-# SOURCE #-} BlockfrostAPI.Types.NutlinkAddressTicker
 import {-# SOURCE #-} BlockfrostAPI.Types.NutlinkAddressTickerTicker
 import {-# SOURCE #-} BlockfrostAPI.Types.NutlinkTickersTicker
 import {-# SOURCE #-} BlockfrostAPI.Types.PoolDelegator
+import {-# SOURCE #-} BlockfrostAPI.Types.PoolHistory
 import {-# SOURCE #-} BlockfrostAPI.Types.ShortAsset
 
 
@@ -60,6 +61,11 @@ import {-# SOURCE #-} BlockfrostAPI.Types.ShortAsset
 -- 
 -- 
 type PoolList = [Data.Text.Internal.Text]
+
+-- | Defines an alias for the schema located at @components.schemas.pool_histories@ in the specification.
+-- 
+-- 
+type PoolHistories = [PoolHistory]
 
 -- | Defines an alias for the schema located at @components.schemas.pool_delegators@ in the specification.
 -- 
