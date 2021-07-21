@@ -31,7 +31,7 @@ import qualified GHC.Types
 import qualified BlockfrostAPI.Common
 import BlockfrostAPI.TypeAlias
 
--- | Defines the object schema located at @components.schemas.account_addresses_content.items@ in the specification.
+-- | Defines the object schema located at @components.schemas.account_addresses_content@ in the specification.
 -- 
 -- 
 data AccountAddressesContent = AccountAddressesContent {
@@ -48,9 +48,3 @@ instance Data.Aeson.Types.FromJSON.FromJSON AccountAddressesContent
 mkAccountAddressesContent :: Data.Text.Internal.Text -- ^ 'accountAddressesContentAddress'
   -> AccountAddressesContent
 mkAccountAddressesContent accountAddressesContentAddress = AccountAddressesContent{accountAddressesContentAddress = accountAddressesContentAddress}
--- | Defines an alias for the schema located at @components.schemas.account_addresses_content@ in the specification.
--- 
--- 
--- XXX: collision
--- type AccountAddressesContent = [AccountAddressesContent]
-type AccountAddressesContent' = [AccountAddressesContent]

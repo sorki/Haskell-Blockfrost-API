@@ -30,6 +30,7 @@ import qualified GHC.Show
 import qualified GHC.Types
 import qualified BlockfrostAPI.Common
 import {-# SOURCE #-} BlockfrostAPI.Types.AccountAddressesAsset
+import {-# SOURCE #-} BlockfrostAPI.Types.AccountAddressesContent
 import {-# SOURCE #-} BlockfrostAPI.Types.AddressUtxoContent
 import {-# SOURCE #-} BlockfrostAPI.Types.BlockContent
 import {-# SOURCE #-} BlockfrostAPI.Types.EpochContent
@@ -84,6 +85,11 @@ type AddressUtxoContents = [AddressUtxoContent]
 -- 
 -- 
 type AddressTxsContent = [Data.Text.Internal.Text]
+
+-- | Defines an alias for the schema located at @components.schemas.account_addresses_contents@ in the specification.
+-- 
+-- 
+type AccountAddressesContents = [AccountAddressesContent]
 
 -- | Defines an alias for the schema located at @components.schemas.account_addresses_assets@ in the specification.
 -- 
