@@ -36,7 +36,7 @@ import BlockfrostAPI.TypeAlias
 -- 
 data TxMetadataLabelJsonItem = TxMetadataLabelJsonItem {
   -- | json_metadata: Content of the JSON metadata
-  txMetadataLabelJsonItemJsonMetadata :: TxMetadataLabelJsonItemJsonMetadata'Variants
+  txMetadataLabelJsonItemJsonMetadata :: (GHC.Maybe.Maybe TxMetadataLabelJsonItemJsonMetadata'Variants)
   -- | tx_hash: Transaction hash that contains the specific metadata
   , txMetadataLabelJsonItemTxHash :: Data.Text.Internal.Text
   } deriving (GHC.Show.Show
@@ -47,7 +47,7 @@ instance Data.Aeson.Types.ToJSON.ToJSON TxMetadataLabelJsonItem
 instance Data.Aeson.Types.FromJSON.FromJSON TxMetadataLabelJsonItem
     where parseJSON = Data.Aeson.Types.FromJSON.withObject "TxMetadataLabelJsonItem" (\obj -> (GHC.Base.pure TxMetadataLabelJsonItem GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "json_metadata")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "tx_hash"))
 -- | Create a new 'TxMetadataLabelJsonItem' with all required fields.
-mkTxMetadataLabelJsonItem :: TxMetadataLabelJsonItemJsonMetadata'Variants -- ^ 'txMetadataLabelJsonItemJsonMetadata'
+mkTxMetadataLabelJsonItem :: GHC.Maybe.Maybe TxMetadataLabelJsonItemJsonMetadata'Variants -- ^ 'txMetadataLabelJsonItemJsonMetadata'
   -> Data.Text.Internal.Text -- ^ 'txMetadataLabelJsonItemTxHash'
   -> TxMetadataLabelJsonItem
 mkTxMetadataLabelJsonItem txMetadataLabelJsonItemJsonMetadata txMetadataLabelJsonItemTxHash = TxMetadataLabelJsonItem{txMetadataLabelJsonItemJsonMetadata = txMetadataLabelJsonItemJsonMetadata,

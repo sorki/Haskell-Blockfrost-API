@@ -36,7 +36,7 @@ import BlockfrostAPI.TypeAlias
 -- 
 data EpochContent = EpochContent {
   -- | active_stake: Sum of all the active stakes within the epoch in Lovelaces
-  epochContentActiveStake :: Data.Text.Internal.Text
+  epochContentActiveStake :: (GHC.Maybe.Maybe Data.Text.Internal.Text)
   -- | block_count: Number of blocks within the epoch
   , epochContentBlockCount :: GHC.Integer.Type.Integer
   -- | end_time: Unix time of the end of the epoch
@@ -63,7 +63,7 @@ instance Data.Aeson.Types.ToJSON.ToJSON EpochContent
 instance Data.Aeson.Types.FromJSON.FromJSON EpochContent
     where parseJSON = Data.Aeson.Types.FromJSON.withObject "EpochContent" (\obj -> (((((((((GHC.Base.pure EpochContent GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "active_stake")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "block_count")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "end_time")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "epoch")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "fees")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "first_block_time")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "last_block_time")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "output")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "start_time")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "tx_count"))
 -- | Create a new 'EpochContent' with all required fields.
-mkEpochContent :: Data.Text.Internal.Text -- ^ 'epochContentActiveStake'
+mkEpochContent :: GHC.Maybe.Maybe Data.Text.Internal.Text -- ^ 'epochContentActiveStake'
   -> GHC.Integer.Type.Integer -- ^ 'epochContentBlockCount'
   -> GHC.Integer.Type.Integer -- ^ 'epochContentEndTime'
   -> GHC.Integer.Type.Integer -- ^ 'epochContentEpoch'

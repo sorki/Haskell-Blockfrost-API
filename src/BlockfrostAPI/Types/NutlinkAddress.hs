@@ -38,7 +38,7 @@ data NutlinkAddress = NutlinkAddress {
   -- | address: Bech32 encoded address
   nutlinkAddressAddress :: Data.Text.Internal.Text
   -- | metadata: The cached metadata of the \`metadata_url\` file.
-  , nutlinkAddressMetadata :: Data.Aeson.Types.Internal.Object
+  , nutlinkAddressMetadata :: (GHC.Maybe.Maybe Data.Aeson.Types.Internal.Object)
   -- | metadata_hash: Hash of the metadata file
   , nutlinkAddressMetadataHash :: Data.Text.Internal.Text
   -- | metadata_url: URL do specific metadata file
@@ -52,7 +52,7 @@ instance Data.Aeson.Types.FromJSON.FromJSON NutlinkAddress
     where parseJSON = Data.Aeson.Types.FromJSON.withObject "NutlinkAddress" (\obj -> (((GHC.Base.pure NutlinkAddress GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "address")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "metadata")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "metadata_hash")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "metadata_url"))
 -- | Create a new 'NutlinkAddress' with all required fields.
 mkNutlinkAddress :: Data.Text.Internal.Text -- ^ 'nutlinkAddressAddress'
-  -> Data.Aeson.Types.Internal.Object -- ^ 'nutlinkAddressMetadata'
+  -> GHC.Maybe.Maybe Data.Aeson.Types.Internal.Object -- ^ 'nutlinkAddressMetadata'
   -> Data.Text.Internal.Text -- ^ 'nutlinkAddressMetadataHash'
   -> Data.Text.Internal.Text -- ^ 'nutlinkAddressMetadataUrl'
   -> NutlinkAddress

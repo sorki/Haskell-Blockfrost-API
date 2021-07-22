@@ -52,9 +52,9 @@ data TxContent = TxContent {
   -- | index: Transaction index within the block
   , txContentIndex :: GHC.Integer.Type.Integer
   -- | invalid_before: Left (included) endpoint of the timelock validity intervals
-  , txContentInvalidBefore :: Data.Text.Internal.Text
+  , txContentInvalidBefore :: (GHC.Maybe.Maybe Data.Text.Internal.Text)
   -- | invalid_hereafter: Right (excluded) endpoint of the timelock validity intervals
-  , txContentInvalidHereafter :: Data.Text.Internal.Text
+  , txContentInvalidHereafter :: (GHC.Maybe.Maybe Data.Text.Internal.Text)
   -- | mir_cert_count: Count of the MIR certificates within the transaction
   , txContentMirCertCount :: GHC.Integer.Type.Integer
   -- | output_amount
@@ -89,8 +89,8 @@ mkTxContent :: GHC.Integer.Type.Integer -- ^ 'txContentAssetMintOrBurnCount'
   -> Data.Text.Internal.Text -- ^ 'txContentFees'
   -> Data.Text.Internal.Text -- ^ 'txContentHash'
   -> GHC.Integer.Type.Integer -- ^ 'txContentIndex'
-  -> Data.Text.Internal.Text -- ^ 'txContentInvalidBefore'
-  -> Data.Text.Internal.Text -- ^ 'txContentInvalidHereafter'
+  -> GHC.Maybe.Maybe Data.Text.Internal.Text -- ^ 'txContentInvalidBefore'
+  -> GHC.Maybe.Maybe Data.Text.Internal.Text -- ^ 'txContentInvalidHereafter'
   -> GHC.Integer.Type.Integer -- ^ 'txContentMirCertCount'
   -> [TxContentOutputAmount'] -- ^ 'txContentOutputAmount'
   -> GHC.Integer.Type.Integer -- ^ 'txContentPoolRetireCount'

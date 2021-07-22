@@ -40,7 +40,7 @@ data AddressContent = AddressContent {
   -- | amount
   , addressContentAmount :: ([AddressContentAmount'])
   -- | stake_address: Stake address that controls the key
-  , addressContentStakeAddress :: Data.Text.Internal.Text
+  , addressContentStakeAddress :: (GHC.Maybe.Maybe Data.Text.Internal.Text)
   -- | type: Address era
   , addressContentType :: AddressContentType'
   } deriving (GHC.Show.Show
@@ -53,7 +53,7 @@ instance Data.Aeson.Types.FromJSON.FromJSON AddressContent
 -- | Create a new 'AddressContent' with all required fields.
 mkAddressContent :: Data.Text.Internal.Text -- ^ 'addressContentAddress'
   -> [AddressContentAmount'] -- ^ 'addressContentAmount'
-  -> Data.Text.Internal.Text -- ^ 'addressContentStakeAddress'
+  -> GHC.Maybe.Maybe Data.Text.Internal.Text -- ^ 'addressContentStakeAddress'
   -> AddressContentType' -- ^ 'addressContentType'
   -> AddressContent
 mkAddressContent addressContentAddress addressContentAmount addressContentStakeAddress addressContentType = AddressContent{addressContentAddress = addressContentAddress,

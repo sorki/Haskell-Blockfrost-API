@@ -36,7 +36,7 @@ import BlockfrostAPI.TypeAlias
 -- 
 data TxContentMetadataCborItem = TxContentMetadataCborItem {
   -- | cbor_metadata: Content of the CBOR metadata
-  txContentMetadataCborItemCborMetadata :: Data.Text.Internal.Text
+  txContentMetadataCborItemCborMetadata :: (GHC.Maybe.Maybe Data.Text.Internal.Text)
   -- | label: Metadata label
   , txContentMetadataCborItemLabel :: Data.Text.Internal.Text
   } deriving (GHC.Show.Show
@@ -47,7 +47,7 @@ instance Data.Aeson.Types.ToJSON.ToJSON TxContentMetadataCborItem
 instance Data.Aeson.Types.FromJSON.FromJSON TxContentMetadataCborItem
     where parseJSON = Data.Aeson.Types.FromJSON.withObject "TxContentMetadataCborItem" (\obj -> (GHC.Base.pure TxContentMetadataCborItem GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "cbor_metadata")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "label"))
 -- | Create a new 'TxContentMetadataCborItem' with all required fields.
-mkTxContentMetadataCborItem :: Data.Text.Internal.Text -- ^ 'txContentMetadataCborItemCborMetadata'
+mkTxContentMetadataCborItem :: GHC.Maybe.Maybe Data.Text.Internal.Text -- ^ 'txContentMetadataCborItemCborMetadata'
   -> Data.Text.Internal.Text -- ^ 'txContentMetadataCborItemLabel'
   -> TxContentMetadataCborItem
 mkTxContentMetadataCborItem txContentMetadataCborItemCborMetadata txContentMetadataCborItemLabel = TxContentMetadataCborItem{txContentMetadataCborItemCborMetadata = txContentMetadataCborItemCborMetadata,

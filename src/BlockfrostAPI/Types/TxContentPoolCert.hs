@@ -44,7 +44,7 @@ data TxContentPoolCert = TxContentPoolCert {
   -- | margin_cost: Margin tax cost of the stake pool
   , txContentPoolCertMarginCost :: Data.Scientific.Scientific
   -- | metadata
-  , txContentPoolCertMetadata :: TxContentPoolCertMetadata'
+  , txContentPoolCertMetadata :: (GHC.Maybe.Maybe TxContentPoolCertMetadata')
   -- | owners
   , txContentPoolCertOwners :: ([Data.Text.Internal.Text])
   -- | pledge: Stake pool certificate pledge in Lovelaces
@@ -69,7 +69,7 @@ mkTxContentPoolCert :: GHC.Integer.Type.Integer -- ^ 'txContentPoolCertActiveEpo
   -> GHC.Integer.Type.Integer -- ^ 'txContentPoolCertCertIndex'
   -> Data.Text.Internal.Text -- ^ 'txContentPoolCertFixedCost'
   -> Data.Scientific.Scientific -- ^ 'txContentPoolCertMarginCost'
-  -> TxContentPoolCertMetadata' -- ^ 'txContentPoolCertMetadata'
+  -> GHC.Maybe.Maybe TxContentPoolCertMetadata' -- ^ 'txContentPoolCertMetadata'
   -> [Data.Text.Internal.Text] -- ^ 'txContentPoolCertOwners'
   -> Data.Text.Internal.Text -- ^ 'txContentPoolCertPledge'
   -> Data.Text.Internal.Text -- ^ 'txContentPoolCertPoolId'
@@ -93,17 +93,17 @@ mkTxContentPoolCert txContentPoolCertActiveEpoch txContentPoolCertCertIndex txCo
 -- 
 data TxContentPoolCertMetadata' = TxContentPoolCertMetadata' {
   -- | description: Description of the stake pool
-  txContentPoolCertMetadata'Description :: Data.Text.Internal.Text
+  txContentPoolCertMetadata'Description :: (GHC.Maybe.Maybe Data.Text.Internal.Text)
   -- | hash: Hash of the metadata file
-  , txContentPoolCertMetadata'Hash :: Data.Text.Internal.Text
+  , txContentPoolCertMetadata'Hash :: (GHC.Maybe.Maybe Data.Text.Internal.Text)
   -- | homepage: Home page of the stake pool
-  , txContentPoolCertMetadata'Homepage :: Data.Text.Internal.Text
+  , txContentPoolCertMetadata'Homepage :: (GHC.Maybe.Maybe Data.Text.Internal.Text)
   -- | name: Name of the stake pool
-  , txContentPoolCertMetadata'Name :: Data.Text.Internal.Text
+  , txContentPoolCertMetadata'Name :: (GHC.Maybe.Maybe Data.Text.Internal.Text)
   -- | ticker: Ticker of the stake pool
-  , txContentPoolCertMetadata'Ticker :: Data.Text.Internal.Text
+  , txContentPoolCertMetadata'Ticker :: (GHC.Maybe.Maybe Data.Text.Internal.Text)
   -- | url: URL to the stake pool metadata
-  , txContentPoolCertMetadata'Url :: Data.Text.Internal.Text
+  , txContentPoolCertMetadata'Url :: (GHC.Maybe.Maybe Data.Text.Internal.Text)
   } deriving (GHC.Show.Show
   , GHC.Classes.Eq)
 instance Data.Aeson.Types.ToJSON.ToJSON TxContentPoolCertMetadata'
@@ -112,12 +112,12 @@ instance Data.Aeson.Types.ToJSON.ToJSON TxContentPoolCertMetadata'
 instance Data.Aeson.Types.FromJSON.FromJSON TxContentPoolCertMetadata'
     where parseJSON = Data.Aeson.Types.FromJSON.withObject "TxContentPoolCertMetadata'" (\obj -> (((((GHC.Base.pure TxContentPoolCertMetadata' GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "description")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "hash")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "homepage")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "name")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "ticker")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "url"))
 -- | Create a new 'TxContentPoolCertMetadata'' with all required fields.
-mkTxContentPoolCertMetadata' :: Data.Text.Internal.Text -- ^ 'txContentPoolCertMetadata'Description'
-  -> Data.Text.Internal.Text -- ^ 'txContentPoolCertMetadata'Hash'
-  -> Data.Text.Internal.Text -- ^ 'txContentPoolCertMetadata'Homepage'
-  -> Data.Text.Internal.Text -- ^ 'txContentPoolCertMetadata'Name'
-  -> Data.Text.Internal.Text -- ^ 'txContentPoolCertMetadata'Ticker'
-  -> Data.Text.Internal.Text -- ^ 'txContentPoolCertMetadata'Url'
+mkTxContentPoolCertMetadata' :: GHC.Maybe.Maybe Data.Text.Internal.Text -- ^ 'txContentPoolCertMetadata'Description'
+  -> GHC.Maybe.Maybe Data.Text.Internal.Text -- ^ 'txContentPoolCertMetadata'Hash'
+  -> GHC.Maybe.Maybe Data.Text.Internal.Text -- ^ 'txContentPoolCertMetadata'Homepage'
+  -> GHC.Maybe.Maybe Data.Text.Internal.Text -- ^ 'txContentPoolCertMetadata'Name'
+  -> GHC.Maybe.Maybe Data.Text.Internal.Text -- ^ 'txContentPoolCertMetadata'Ticker'
+  -> GHC.Maybe.Maybe Data.Text.Internal.Text -- ^ 'txContentPoolCertMetadata'Url'
   -> TxContentPoolCertMetadata'
 mkTxContentPoolCertMetadata' txContentPoolCertMetadata'Description txContentPoolCertMetadata'Hash txContentPoolCertMetadata'Homepage txContentPoolCertMetadata'Name txContentPoolCertMetadata'Ticker txContentPoolCertMetadata'Url = TxContentPoolCertMetadata'{txContentPoolCertMetadata'Description = txContentPoolCertMetadata'Description,
                                                                                                                                                                                                                                                                 txContentPoolCertMetadata'Hash = txContentPoolCertMetadata'Hash,
@@ -130,13 +130,13 @@ mkTxContentPoolCertMetadata' txContentPoolCertMetadata'Description txContentPool
 -- 
 data TxContentPoolCertRelays' = TxContentPoolCertRelays' {
   -- | dns: DNS name of the relay
-  txContentPoolCertRelays'Dns :: Data.Text.Internal.Text
+  txContentPoolCertRelays'Dns :: (GHC.Maybe.Maybe Data.Text.Internal.Text)
   -- | dns_srv: DNS SRV entry of the relay
-  , txContentPoolCertRelays'DnsSrv :: Data.Text.Internal.Text
+  , txContentPoolCertRelays'DnsSrv :: (GHC.Maybe.Maybe Data.Text.Internal.Text)
   -- | ipv4: IPv4 address of the relay
-  , txContentPoolCertRelays'Ipv4 :: Data.Text.Internal.Text
+  , txContentPoolCertRelays'Ipv4 :: (GHC.Maybe.Maybe Data.Text.Internal.Text)
   -- | ipv6: IPv6 address of the relay
-  , txContentPoolCertRelays'Ipv6 :: Data.Text.Internal.Text
+  , txContentPoolCertRelays'Ipv6 :: (GHC.Maybe.Maybe Data.Text.Internal.Text)
   -- | port: Network port of the relay
   , txContentPoolCertRelays'Port :: GHC.Integer.Type.Integer
   } deriving (GHC.Show.Show
@@ -147,10 +147,10 @@ instance Data.Aeson.Types.ToJSON.ToJSON TxContentPoolCertRelays'
 instance Data.Aeson.Types.FromJSON.FromJSON TxContentPoolCertRelays'
     where parseJSON = Data.Aeson.Types.FromJSON.withObject "TxContentPoolCertRelays'" (\obj -> ((((GHC.Base.pure TxContentPoolCertRelays' GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "dns")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "dns_srv")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "ipv4")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "ipv6")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "port"))
 -- | Create a new 'TxContentPoolCertRelays'' with all required fields.
-mkTxContentPoolCertRelays' :: Data.Text.Internal.Text -- ^ 'txContentPoolCertRelays'Dns'
-  -> Data.Text.Internal.Text -- ^ 'txContentPoolCertRelays'DnsSrv'
-  -> Data.Text.Internal.Text -- ^ 'txContentPoolCertRelays'Ipv4'
-  -> Data.Text.Internal.Text -- ^ 'txContentPoolCertRelays'Ipv6'
+mkTxContentPoolCertRelays' :: GHC.Maybe.Maybe Data.Text.Internal.Text -- ^ 'txContentPoolCertRelays'Dns'
+  -> GHC.Maybe.Maybe Data.Text.Internal.Text -- ^ 'txContentPoolCertRelays'DnsSrv'
+  -> GHC.Maybe.Maybe Data.Text.Internal.Text -- ^ 'txContentPoolCertRelays'Ipv4'
+  -> GHC.Maybe.Maybe Data.Text.Internal.Text -- ^ 'txContentPoolCertRelays'Ipv6'
   -> GHC.Integer.Type.Integer -- ^ 'txContentPoolCertRelays'Port'
   -> TxContentPoolCertRelays'
 mkTxContentPoolCertRelays' txContentPoolCertRelays'Dns txContentPoolCertRelays'DnsSrv txContentPoolCertRelays'Ipv4 txContentPoolCertRelays'Ipv6 txContentPoolCertRelays'Port = TxContentPoolCertRelays'{txContentPoolCertRelays'Dns = txContentPoolCertRelays'Dns,

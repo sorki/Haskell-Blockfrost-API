@@ -38,18 +38,18 @@ data Asset = Asset {
   -- | asset: Hex-encoded asset full name
   assetAsset :: Data.Text.Internal.Text
   -- | asset_name: Hex-encoded asset name of the asset
-  , assetAssetName :: Data.Text.Internal.Text
+  , assetAssetName :: (GHC.Maybe.Maybe Data.Text.Internal.Text)
   -- | fingerprint: CIP14 based user-facing fingerprint
   , assetFingerprint :: Data.Text.Internal.Text
   -- | initial_mint_tx_hash: ID of the initial minting transaction
   , assetInitialMintTxHash :: Data.Text.Internal.Text
   -- | metadata
-  , assetMetadata :: AssetMetadata'
+  , assetMetadata :: (GHC.Maybe.Maybe AssetMetadata')
   -- | mint_or_burn_count: Count of mint and burn transactions
   , assetMintOrBurnCount :: GHC.Integer.Type.Integer
   -- | onchain_metadata: On-chain metadata stored in the minting transaction under label 721,
   -- community discussion around the standard ongoing at https:\/\/github.com\/cardano-foundation\/CIPs\/pull\/85
-  , assetOnchainMetadata :: AssetOnchainMetadata'
+  , assetOnchainMetadata :: (GHC.Maybe.Maybe AssetOnchainMetadata')
   -- | policy_id: Policy ID of the asset
   , assetPolicyId :: Data.Text.Internal.Text
   -- | quantity: Current asset quantity
@@ -63,12 +63,12 @@ instance Data.Aeson.Types.FromJSON.FromJSON Asset
     where parseJSON = Data.Aeson.Types.FromJSON.withObject "Asset" (\obj -> ((((((((GHC.Base.pure Asset GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "asset")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "asset_name")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "fingerprint")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "initial_mint_tx_hash")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "metadata")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "mint_or_burn_count")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "onchain_metadata")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "policy_id")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "quantity"))
 -- | Create a new 'Asset' with all required fields.
 mkAsset :: Data.Text.Internal.Text -- ^ 'assetAsset'
-  -> Data.Text.Internal.Text -- ^ 'assetAssetName'
+  -> GHC.Maybe.Maybe Data.Text.Internal.Text -- ^ 'assetAssetName'
   -> Data.Text.Internal.Text -- ^ 'assetFingerprint'
   -> Data.Text.Internal.Text -- ^ 'assetInitialMintTxHash'
-  -> AssetMetadata' -- ^ 'assetMetadata'
+  -> GHC.Maybe.Maybe AssetMetadata' -- ^ 'assetMetadata'
   -> GHC.Integer.Type.Integer -- ^ 'assetMintOrBurnCount'
-  -> AssetOnchainMetadata' -- ^ 'assetOnchainMetadata'
+  -> GHC.Maybe.Maybe AssetOnchainMetadata' -- ^ 'assetOnchainMetadata'
   -> Data.Text.Internal.Text -- ^ 'assetPolicyId'
   -> Data.Text.Internal.Text -- ^ 'assetQuantity'
   -> Asset
@@ -90,17 +90,17 @@ data AssetMetadata' = AssetMetadata' {
   -- Constraints:
   -- 
   -- * Maxium  of 255.0
-  assetMetadata'Decimals :: GHC.Integer.Type.Integer
+  assetMetadata'Decimals :: (GHC.Maybe.Maybe GHC.Integer.Type.Integer)
   -- | description: Asset description
   , assetMetadata'Description :: Data.Text.Internal.Text
   -- | logo: Base64 encoded logo of the asset
-  , assetMetadata'Logo :: Data.Text.Internal.Text
+  , assetMetadata'Logo :: (GHC.Maybe.Maybe Data.Text.Internal.Text)
   -- | name: Asset name
   , assetMetadata'Name :: Data.Text.Internal.Text
   -- | ticker
-  , assetMetadata'Ticker :: Data.Text.Internal.Text
+  , assetMetadata'Ticker :: (GHC.Maybe.Maybe Data.Text.Internal.Text)
   -- | url: Asset website
-  , assetMetadata'Url :: Data.Text.Internal.Text
+  , assetMetadata'Url :: (GHC.Maybe.Maybe Data.Text.Internal.Text)
   } deriving (GHC.Show.Show
   , GHC.Classes.Eq)
 instance Data.Aeson.Types.ToJSON.ToJSON AssetMetadata'
@@ -109,12 +109,12 @@ instance Data.Aeson.Types.ToJSON.ToJSON AssetMetadata'
 instance Data.Aeson.Types.FromJSON.FromJSON AssetMetadata'
     where parseJSON = Data.Aeson.Types.FromJSON.withObject "AssetMetadata'" (\obj -> (((((GHC.Base.pure AssetMetadata' GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "decimals")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "description")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "logo")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "name")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "ticker")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "url"))
 -- | Create a new 'AssetMetadata'' with all required fields.
-mkAssetMetadata' :: GHC.Integer.Type.Integer -- ^ 'assetMetadata'Decimals'
+mkAssetMetadata' :: GHC.Maybe.Maybe GHC.Integer.Type.Integer -- ^ 'assetMetadata'Decimals'
   -> Data.Text.Internal.Text -- ^ 'assetMetadata'Description'
-  -> Data.Text.Internal.Text -- ^ 'assetMetadata'Logo'
+  -> GHC.Maybe.Maybe Data.Text.Internal.Text -- ^ 'assetMetadata'Logo'
   -> Data.Text.Internal.Text -- ^ 'assetMetadata'Name'
-  -> Data.Text.Internal.Text -- ^ 'assetMetadata'Ticker'
-  -> Data.Text.Internal.Text -- ^ 'assetMetadata'Url'
+  -> GHC.Maybe.Maybe Data.Text.Internal.Text -- ^ 'assetMetadata'Ticker'
+  -> GHC.Maybe.Maybe Data.Text.Internal.Text -- ^ 'assetMetadata'Url'
   -> AssetMetadata'
 mkAssetMetadata' assetMetadata'Decimals assetMetadata'Description assetMetadata'Logo assetMetadata'Name assetMetadata'Ticker assetMetadata'Url = AssetMetadata'{assetMetadata'Decimals = assetMetadata'Decimals,
                                                                                                                                                                 assetMetadata'Description = assetMetadata'Description,

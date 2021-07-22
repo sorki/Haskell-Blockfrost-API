@@ -36,21 +36,21 @@ import BlockfrostAPI.TypeAlias
 -- 
 data PoolMetadata = PoolMetadata {
   -- | description: Description of the stake pool
-  poolMetadataDescription :: Data.Text.Internal.Text
+  poolMetadataDescription :: (GHC.Maybe.Maybe Data.Text.Internal.Text)
   -- | hash: Hash of the metadata file
-  , poolMetadataHash :: Data.Text.Internal.Text
+  , poolMetadataHash :: (GHC.Maybe.Maybe Data.Text.Internal.Text)
   -- | hex: Hexadecimal pool ID
   , poolMetadataHex :: Data.Text.Internal.Text
   -- | homepage: Home page of the stake pool
-  , poolMetadataHomepage :: Data.Text.Internal.Text
+  , poolMetadataHomepage :: (GHC.Maybe.Maybe Data.Text.Internal.Text)
   -- | name: Name of the stake pool
-  , poolMetadataName :: Data.Text.Internal.Text
+  , poolMetadataName :: (GHC.Maybe.Maybe Data.Text.Internal.Text)
   -- | pool_id: Bech32 pool ID
   , poolMetadataPoolId :: Data.Text.Internal.Text
   -- | ticker: Ticker of the stake pool
-  , poolMetadataTicker :: Data.Text.Internal.Text
+  , poolMetadataTicker :: (GHC.Maybe.Maybe Data.Text.Internal.Text)
   -- | url: URL to the stake pool metadata
-  , poolMetadataUrl :: Data.Text.Internal.Text
+  , poolMetadataUrl :: (GHC.Maybe.Maybe Data.Text.Internal.Text)
   } deriving (GHC.Show.Show
   , GHC.Classes.Eq)
 instance Data.Aeson.Types.ToJSON.ToJSON PoolMetadata
@@ -59,14 +59,14 @@ instance Data.Aeson.Types.ToJSON.ToJSON PoolMetadata
 instance Data.Aeson.Types.FromJSON.FromJSON PoolMetadata
     where parseJSON = Data.Aeson.Types.FromJSON.withObject "PoolMetadata" (\obj -> (((((((GHC.Base.pure PoolMetadata GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "description")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "hash")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "hex")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "homepage")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "name")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "pool_id")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "ticker")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "url"))
 -- | Create a new 'PoolMetadata' with all required fields.
-mkPoolMetadata :: Data.Text.Internal.Text -- ^ 'poolMetadataDescription'
-  -> Data.Text.Internal.Text -- ^ 'poolMetadataHash'
+mkPoolMetadata :: GHC.Maybe.Maybe Data.Text.Internal.Text -- ^ 'poolMetadataDescription'
+  -> GHC.Maybe.Maybe Data.Text.Internal.Text -- ^ 'poolMetadataHash'
   -> Data.Text.Internal.Text -- ^ 'poolMetadataHex'
-  -> Data.Text.Internal.Text -- ^ 'poolMetadataHomepage'
-  -> Data.Text.Internal.Text -- ^ 'poolMetadataName'
+  -> GHC.Maybe.Maybe Data.Text.Internal.Text -- ^ 'poolMetadataHomepage'
+  -> GHC.Maybe.Maybe Data.Text.Internal.Text -- ^ 'poolMetadataName'
   -> Data.Text.Internal.Text -- ^ 'poolMetadataPoolId'
-  -> Data.Text.Internal.Text -- ^ 'poolMetadataTicker'
-  -> Data.Text.Internal.Text -- ^ 'poolMetadataUrl'
+  -> GHC.Maybe.Maybe Data.Text.Internal.Text -- ^ 'poolMetadataTicker'
+  -> GHC.Maybe.Maybe Data.Text.Internal.Text -- ^ 'poolMetadataUrl'
   -> PoolMetadata
 mkPoolMetadata poolMetadataDescription poolMetadataHash poolMetadataHex poolMetadataHomepage poolMetadataName poolMetadataPoolId poolMetadataTicker poolMetadataUrl = PoolMetadata{poolMetadataDescription = poolMetadataDescription,
                                                                                                                                                                                    poolMetadataHash = poolMetadataHash,

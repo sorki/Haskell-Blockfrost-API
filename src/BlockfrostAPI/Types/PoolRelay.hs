@@ -36,13 +36,13 @@ import BlockfrostAPI.TypeAlias
 -- 
 data PoolRelay = PoolRelay {
   -- | dns: DNS name of the relay
-  poolRelayDns :: Data.Text.Internal.Text
+  poolRelayDns :: (GHC.Maybe.Maybe Data.Text.Internal.Text)
   -- | dns_srv: DNS SRV entry of the relay
-  , poolRelayDnsSrv :: Data.Text.Internal.Text
+  , poolRelayDnsSrv :: (GHC.Maybe.Maybe Data.Text.Internal.Text)
   -- | ipv4: IPv4 address of the relay
-  , poolRelayIpv4 :: Data.Text.Internal.Text
+  , poolRelayIpv4 :: (GHC.Maybe.Maybe Data.Text.Internal.Text)
   -- | ipv6: IPv6 address of the relay
-  , poolRelayIpv6 :: Data.Text.Internal.Text
+  , poolRelayIpv6 :: (GHC.Maybe.Maybe Data.Text.Internal.Text)
   -- | port: Network port of the relay
   , poolRelayPort :: GHC.Integer.Type.Integer
   } deriving (GHC.Show.Show
@@ -53,10 +53,10 @@ instance Data.Aeson.Types.ToJSON.ToJSON PoolRelay
 instance Data.Aeson.Types.FromJSON.FromJSON PoolRelay
     where parseJSON = Data.Aeson.Types.FromJSON.withObject "PoolRelay" (\obj -> ((((GHC.Base.pure PoolRelay GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "dns")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "dns_srv")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "ipv4")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "ipv6")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "port"))
 -- | Create a new 'PoolRelay' with all required fields.
-mkPoolRelay :: Data.Text.Internal.Text -- ^ 'poolRelayDns'
-  -> Data.Text.Internal.Text -- ^ 'poolRelayDnsSrv'
-  -> Data.Text.Internal.Text -- ^ 'poolRelayIpv4'
-  -> Data.Text.Internal.Text -- ^ 'poolRelayIpv6'
+mkPoolRelay :: GHC.Maybe.Maybe Data.Text.Internal.Text -- ^ 'poolRelayDns'
+  -> GHC.Maybe.Maybe Data.Text.Internal.Text -- ^ 'poolRelayDnsSrv'
+  -> GHC.Maybe.Maybe Data.Text.Internal.Text -- ^ 'poolRelayIpv4'
+  -> GHC.Maybe.Maybe Data.Text.Internal.Text -- ^ 'poolRelayIpv6'
   -> GHC.Integer.Type.Integer -- ^ 'poolRelayPort'
   -> PoolRelay
 mkPoolRelay poolRelayDns poolRelayDnsSrv poolRelayIpv4 poolRelayIpv6 poolRelayPort = PoolRelay{poolRelayDns = poolRelayDns,

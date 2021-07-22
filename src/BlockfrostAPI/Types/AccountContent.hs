@@ -42,7 +42,7 @@ data AccountContent = AccountContent {
   -- | controlled_amount: Balance of the account in Lovelaces
   , accountContentControlledAmount :: Data.Text.Internal.Text
   -- | pool_id: Bech32 pool ID that owns the account
-  , accountContentPoolId :: Data.Text.Internal.Text
+  , accountContentPoolId :: (GHC.Maybe.Maybe Data.Text.Internal.Text)
   -- | reserves_sum: Sum of all  funds from reserves for the account in the Lovelaces
   , accountContentReservesSum :: Data.Text.Internal.Text
   -- | rewards_sum: Sum of all rewards for the account in the Lovelaces
@@ -66,7 +66,7 @@ instance Data.Aeson.Types.FromJSON.FromJSON AccountContent
 mkAccountContent :: GHC.Types.Bool -- ^ 'accountContentActive'
   -> GHC.Integer.Type.Integer -- ^ 'accountContentActiveEpoch'
   -> Data.Text.Internal.Text -- ^ 'accountContentControlledAmount'
-  -> Data.Text.Internal.Text -- ^ 'accountContentPoolId'
+  -> GHC.Maybe.Maybe Data.Text.Internal.Text -- ^ 'accountContentPoolId'
   -> Data.Text.Internal.Text -- ^ 'accountContentReservesSum'
   -> Data.Text.Internal.Text -- ^ 'accountContentRewardsSum'
   -> Data.Text.Internal.Text -- ^ 'accountContentStakeAddress'

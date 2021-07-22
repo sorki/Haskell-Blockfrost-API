@@ -41,29 +41,29 @@ data BlockContent = BlockContent {
   -- 
   -- * Maximum length of 65
   -- * Minimum length of 65
-  blockContentBlockVrf :: Data.Text.Internal.Text
+  blockContentBlockVrf :: (GHC.Maybe.Maybe Data.Text.Internal.Text)
   -- | confirmations: Number of block confirmations
   , blockContentConfirmations :: GHC.Integer.Type.Integer
   -- | epoch: Epoch number
-  , blockContentEpoch :: GHC.Integer.Type.Integer
+  , blockContentEpoch :: (GHC.Maybe.Maybe GHC.Integer.Type.Integer)
   -- | epoch_slot: Slot within the epoch
-  , blockContentEpochSlot :: GHC.Integer.Type.Integer
+  , blockContentEpochSlot :: (GHC.Maybe.Maybe GHC.Integer.Type.Integer)
   -- | fees: Total fees within the block in Lovelaces
-  , blockContentFees :: Data.Text.Internal.Text
+  , blockContentFees :: (GHC.Maybe.Maybe Data.Text.Internal.Text)
   -- | hash: Hash of the block
   , blockContentHash :: Data.Text.Internal.Text
   -- | height: Block number
-  , blockContentHeight :: GHC.Integer.Type.Integer
+  , blockContentHeight :: (GHC.Maybe.Maybe GHC.Integer.Type.Integer)
   -- | next_block: Hash of the next block
-  , blockContentNextBlock :: Data.Text.Internal.Text
+  , blockContentNextBlock :: (GHC.Maybe.Maybe Data.Text.Internal.Text)
   -- | output: Total output within the block in Lovelaces
-  , blockContentOutput :: Data.Text.Internal.Text
+  , blockContentOutput :: (GHC.Maybe.Maybe Data.Text.Internal.Text)
   -- | previous_block: Hash of the previous block
-  , blockContentPreviousBlock :: Data.Text.Internal.Text
+  , blockContentPreviousBlock :: (GHC.Maybe.Maybe Data.Text.Internal.Text)
   -- | size: Block size in Bytes
   , blockContentSize :: GHC.Integer.Type.Integer
   -- | slot: Slot number
-  , blockContentSlot :: GHC.Integer.Type.Integer
+  , blockContentSlot :: (GHC.Maybe.Maybe GHC.Integer.Type.Integer)
   -- | slot_leader: Bech32 ID of the slot leader or specific block description in case there is no slot leader
   , blockContentSlotLeader :: Data.Text.Internal.Text
   -- | time: Block creation time in UNIX time
@@ -78,18 +78,18 @@ instance Data.Aeson.Types.ToJSON.ToJSON BlockContent
 instance Data.Aeson.Types.FromJSON.FromJSON BlockContent
     where parseJSON = Data.Aeson.Types.FromJSON.withObject "BlockContent" (\obj -> ((((((((((((((GHC.Base.pure BlockContent GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "block_vrf")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "confirmations")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "epoch")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "epoch_slot")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "fees")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "hash")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "height")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "next_block")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "output")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "previous_block")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "size")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "slot")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "slot_leader")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "time")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "tx_count"))
 -- | Create a new 'BlockContent' with all required fields.
-mkBlockContent :: Data.Text.Internal.Text -- ^ 'blockContentBlockVrf'
+mkBlockContent :: GHC.Maybe.Maybe Data.Text.Internal.Text -- ^ 'blockContentBlockVrf'
   -> GHC.Integer.Type.Integer -- ^ 'blockContentConfirmations'
-  -> GHC.Integer.Type.Integer -- ^ 'blockContentEpoch'
-  -> GHC.Integer.Type.Integer -- ^ 'blockContentEpochSlot'
-  -> Data.Text.Internal.Text -- ^ 'blockContentFees'
+  -> GHC.Maybe.Maybe GHC.Integer.Type.Integer -- ^ 'blockContentEpoch'
+  -> GHC.Maybe.Maybe GHC.Integer.Type.Integer -- ^ 'blockContentEpochSlot'
+  -> GHC.Maybe.Maybe Data.Text.Internal.Text -- ^ 'blockContentFees'
   -> Data.Text.Internal.Text -- ^ 'blockContentHash'
-  -> GHC.Integer.Type.Integer -- ^ 'blockContentHeight'
-  -> Data.Text.Internal.Text -- ^ 'blockContentNextBlock'
-  -> Data.Text.Internal.Text -- ^ 'blockContentOutput'
-  -> Data.Text.Internal.Text -- ^ 'blockContentPreviousBlock'
+  -> GHC.Maybe.Maybe GHC.Integer.Type.Integer -- ^ 'blockContentHeight'
+  -> GHC.Maybe.Maybe Data.Text.Internal.Text -- ^ 'blockContentNextBlock'
+  -> GHC.Maybe.Maybe Data.Text.Internal.Text -- ^ 'blockContentOutput'
+  -> GHC.Maybe.Maybe Data.Text.Internal.Text -- ^ 'blockContentPreviousBlock'
   -> GHC.Integer.Type.Integer -- ^ 'blockContentSize'
-  -> GHC.Integer.Type.Integer -- ^ 'blockContentSlot'
+  -> GHC.Maybe.Maybe GHC.Integer.Type.Integer -- ^ 'blockContentSlot'
   -> Data.Text.Internal.Text -- ^ 'blockContentSlotLeader'
   -> GHC.Integer.Type.Integer -- ^ 'blockContentTime'
   -> GHC.Integer.Type.Integer -- ^ 'blockContentTxCount'

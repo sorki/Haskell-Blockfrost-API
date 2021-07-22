@@ -36,7 +36,7 @@ import BlockfrostAPI.TypeAlias
 -- 
 data TxMetadataLabel = TxMetadataLabel {
   -- | cip10: CIP10 defined description
-  txMetadataLabelCip10 :: Data.Text.Internal.Text
+  txMetadataLabelCip10 :: (GHC.Maybe.Maybe Data.Text.Internal.Text)
   -- | count: The count of metadata entries with a specific label
   , txMetadataLabelCount :: Data.Text.Internal.Text
   -- | label: Metadata label
@@ -49,7 +49,7 @@ instance Data.Aeson.Types.ToJSON.ToJSON TxMetadataLabel
 instance Data.Aeson.Types.FromJSON.FromJSON TxMetadataLabel
     where parseJSON = Data.Aeson.Types.FromJSON.withObject "TxMetadataLabel" (\obj -> ((GHC.Base.pure TxMetadataLabel GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "cip10")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "count")) GHC.Base.<*> (obj Data.Aeson.Types.FromJSON..: "label"))
 -- | Create a new 'TxMetadataLabel' with all required fields.
-mkTxMetadataLabel :: Data.Text.Internal.Text -- ^ 'txMetadataLabelCip10'
+mkTxMetadataLabel :: GHC.Maybe.Maybe Data.Text.Internal.Text -- ^ 'txMetadataLabelCip10'
   -> Data.Text.Internal.Text -- ^ 'txMetadataLabelCount'
   -> Data.Text.Internal.Text -- ^ 'txMetadataLabelLabel'
   -> TxMetadataLabel

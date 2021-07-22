@@ -44,7 +44,7 @@ data EpochParamContent = EpochParamContent {
   -- | epoch: Epoch number
   , epochParamContentEpoch :: GHC.Integer.Type.Integer
   -- | extra_entropy: Seed for extra entropy
-  , epochParamContentExtraEntropy :: Data.Aeson.Types.Internal.Object
+  , epochParamContentExtraEntropy :: (GHC.Maybe.Maybe Data.Aeson.Types.Internal.Object)
   -- | key_deposit: The amount of a key registration deposit in Lovelaces
   , epochParamContentKeyDeposit :: Data.Text.Internal.Text
   -- | max_block_header_size: Maximum block header size
@@ -87,7 +87,7 @@ mkEpochParamContent :: Data.Scientific.Scientific -- ^ 'epochParamContentA0'
   -> Data.Scientific.Scientific -- ^ 'epochParamContentDecentralisationParam'
   -> GHC.Integer.Type.Integer -- ^ 'epochParamContentEMax'
   -> GHC.Integer.Type.Integer -- ^ 'epochParamContentEpoch'
-  -> Data.Aeson.Types.Internal.Object -- ^ 'epochParamContentExtraEntropy'
+  -> GHC.Maybe.Maybe Data.Aeson.Types.Internal.Object -- ^ 'epochParamContentExtraEntropy'
   -> Data.Text.Internal.Text -- ^ 'epochParamContentKeyDeposit'
   -> GHC.Integer.Type.Integer -- ^ 'epochParamContentMaxBlockHeaderSize'
   -> GHC.Integer.Type.Integer -- ^ 'epochParamContentMaxBlockSize'
